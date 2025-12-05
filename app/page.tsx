@@ -4,15 +4,55 @@ export default function Home() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-white text-black p-8 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, black 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
-      
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, black 1px, transparent 1px)",
+          backgroundSize: "50px 50px",
+        }}
+      ></div>
+
+      {/* Flying Birds Animation */}
+      <div className="bird-container">
+        <div className="bird bird-1">
+          <svg viewBox="0 0 100 50" className="bird-svg">
+            <path
+              d="M 50 25 Q 35 15, 20 25 Q 35 20, 50 25 Q 65 20, 80 25 Q 65 15, 50 25"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div className="bird bird-2">
+          <svg viewBox="0 0 100 50" className="bird-svg">
+            <path
+              d="M 50 25 Q 35 15, 20 25 Q 35 20, 50 25 Q 65 20, 80 25 Q 65 15, 50 25"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div className="bird bird-3">
+          <svg viewBox="0 0 100 50" className="bird-svg">
+            <path
+              d="M 50 25 Q 35 15, 20 25 Q 35 20, 50 25 Q 65 20, 80 25 Q 65 15, 50 25"
+              fill="black"
+            />
+          </svg>
+        </div>
+      </div>
+
       <div className="max-w-4xl w-full text-center space-y-12 relative z-10 animate-fadeIn">
         {/* Main Title */}
         <div className="space-y-4 animate-slideDown">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight transform hover:scale-105 transition-transform duration-500" style={{ textShadow: '4px 4px 0px rgba(0,0,0,0.1)' }}>
+          <h1
+            className="text-6xl md:text-8xl font-bold tracking-tight transform hover:scale-105 transition-transform duration-500"
+            style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.1)" }}
+          >
             REBIRTH
           </h1>
-          <h2 className="text-4xl md:text-6xl font-light tracking-widest">AND NEW HOPE</h2>
+          <h2 className="text-4xl md:text-6xl font-light tracking-widest">
+            AND NEW HOPE
+          </h2>
         </div>
 
         {/* Banner Image */}
@@ -20,11 +60,11 @@ export default function Home() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-black blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
             <Image
-              src="/Rebirth.png"
+              src="/Banner Rebirth.jpg"
               alt="Rebirth and New Hope"
-              width={600}
-              height={300}
-              className="relative w-full max-w-md h-auto border-4 border-black transform group-hover:scale-105 transition-transform duration-500"
+              width={1200}
+              height={400}
+              className="relative w-full max-w-3xl h-auto border-4 border-black transform group-hover:scale-105 transition-transform duration-500"
               priority
             />
           </div>
