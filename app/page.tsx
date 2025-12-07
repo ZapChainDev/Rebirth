@@ -123,7 +123,7 @@ export default function Home() {
                 </h2>
 
                 <p className="text-xl md:text-2xl leading-relaxed text-center font-bold">
-                  REBIRTH isn't just a meme coin — it's a{" "}
+                  REBIRTH isn&apos;t just a meme coin — it&apos;s a{" "}
                   <span className="text-yellow-300">comeback story</span>.
                 </p>
 
@@ -158,7 +158,7 @@ export default function Home() {
               </span>
             </div>
             <p className="mt-6 text-xl md:text-2xl font-black uppercase tracking-wider animate-pulse">
-              🔥 Don't Miss The Rocket! 🔥
+              🔥 Don&apos;t Miss The Rocket! 🔥
             </p>
           </div>
 
