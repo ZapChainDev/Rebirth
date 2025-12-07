@@ -25,80 +25,47 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white text-black relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+    <main className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white relative overflow-hidden">
+      {/* Dark Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black opacity-50"></div>
 
-      {/* Flying Birds Animation */}
-      <div className="bird-container">
-        <div className="bird bird-1">
-          <svg viewBox="0 0 100 50" className="bird-svg">
-            <path
-              d="M 50 25 Q 35 15, 20 25 Q 35 20, 50 25 Q 65 20, 80 25 Q 65 15, 50 25"
-              fill="black"
-            />
-          </svg>
-        </div>
-        <div className="bird bird-2">
-          <svg viewBox="0 0 100 50" className="bird-svg">
-            <path
-              d="M 50 25 Q 35 15, 20 25 Q 35 20, 50 25 Q 65 20, 80 25 Q 65 15, 50 25"
-              fill="black"
-            />
-          </svg>
-        </div>
-        <div className="bird bird-3">
-          <svg viewBox="0 0 100 50" className="bird-svg">
-            <path
-              d="M 50 25 Q 35 15, 20 25 Q 35 20, 50 25 Q 65 20, 80 25 Q 65 15, 50 25"
-              fill="black"
-            />
-          </svg>
-        </div>
+      {/* Rising Smoke - Rebirth From Ashes */}
+      <div className="smoke-container">
+        <div className="smoke smoke-1"></div>
+        <div className="smoke smoke-2"></div>
+        <div className="smoke smoke-3"></div>
+        <div className="smoke smoke-4"></div>
       </div>
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
         <div className="max-w-7xl w-full space-y-16">
-          {/* Main Title - Memecoin Style */}
+          {/* Main Title - Dark Rebirth Aesthetic */}
           <div className="text-center space-y-6 animate-slideDown">
             <div className="inline-block relative">
-              <div className="absolute -top-8 -left-8 text-6xl animate-bounce">
-                🚀
-              </div>
-              <div
-                className="absolute -top-8 -right-8 text-6xl animate-bounce"
-                style={{ animationDelay: "0.3s" }}
-              >
-                💎
-              </div>
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-white/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
               <h1
-                className="text-7xl md:text-9xl font-black tracking-tighter hover:rotate-2 transition-transform duration-300"
-                style={{ textShadow: "8px 8px 0px rgba(0,0,0,0.1)" }}
+                className="text-7xl md:text-9xl font-black tracking-tighter bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent"
+                style={{ textShadow: "0 0 80px rgba(255,255,255,0.3)" }}
               >
                 REBIRTH
               </h1>
-              <div className="h-3 w-full bg-black mt-2 animate-expandWidth transform -skew-x-12"></div>
+              <div className="h-1 w-full bg-gradient-to-r from-transparent via-white to-transparent mt-4 animate-expandWidth"></div>
             </div>
-            <h2 className="text-3xl md:text-5xl font-black tracking-wider text-black animate-pulse">
-              AND NEW HOPE 🔥
+            <h2 className="text-2xl md:text-4xl font-light tracking-[0.3em] text-gray-300 uppercase">
+              And New Hope
             </h2>
-            <div className="flex items-center justify-center gap-4 text-2xl md:text-3xl font-bold">
-              <span className="bg-black text-white px-6 py-3 rounded-full transform -rotate-3 hover:rotate-0 transition-transform">
-                TO THE MOON!
-              </span>
-              <span className="text-4xl animate-spin-slow">🌙</span>
-            </div>
-            <p className="text-lg md:text-xl text-black font-bold uppercase max-w-2xl mx-auto bg-yellow-300 px-6 py-3 rounded-lg transform rotate-1 hover:rotate-0 transition-transform">
-              ⚡ The ULTIMATE Opportunity Token ⚡
+            <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto italic">
+              Rising from the ashes. A second chance. A new beginning.
             </p>
           </div>
 
-          {/* Hero Banner with Modern Card Design */}
+          {/* Hero Banner with Dark Design */}
           <div className="w-full flex justify-center scroll-animate opacity-0">
             <div className="relative group max-w-5xl w-full">
-              <div className="absolute -inset-1 bg-gradient-to-r from-black via-gray-800 to-black rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
-              <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
+              <div className="absolute -inset-1 bg-gradient-to-r from-white via-gray-300 to-white rounded-2xl blur-xl opacity-10 group-hover:opacity-20 transition duration-700"></div>
+              <div className="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
                 <Image
                   src="/Banner Rebirth.jpg"
                   alt="Rebirth and New Hope"
@@ -111,46 +78,76 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Memecoin Features */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto scroll-animate opacity-0">
-            <div className="group bg-white rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border-4 border-black hover:-rotate-2 transform">
-              <div className="text-6xl mb-4 group-hover:scale-125 transition-transform">
-                🚫
-              </div>
-              <h3 className="text-2xl font-black mb-3 uppercase">
-                NO MORE FUD!
+          {/* Core Values - Dark Aesthetic */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto scroll-animate opacity-0">
+            <div className="group bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all duration-500 hover:scale-105">
+              <div className="text-5xl mb-6 opacity-60">🦅</div>
+              <h3 className="text-xl font-bold mb-3 text-white uppercase tracking-wide">
+                Rise Again
               </h3>
-              <p className="text-gray-800 leading-relaxed font-bold">
-                Stop the negativity! WAGMI! 💪
+              <p className="text-gray-400 leading-relaxed">
+                From the ashes, we emerge stronger. Every setback is a setup for
+                a comeback.
               </p>
             </div>
 
-            <div className="group bg-white rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border-4 border-black hover:rotate-2 transform">
-              <div className="text-6xl mb-4 group-hover:scale-125 transition-transform">
-                📈
-              </div>
-              <h3 className="text-2xl font-black mb-3 uppercase">ONLY UP!</h3>
-              <p className="text-gray-800 leading-relaxed font-bold">
-                Forget the bears! Bulls run this town! 🐂
+            <div className="group bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all duration-500 hover:scale-105">
+              <div className="text-5xl mb-6 opacity-60">🔥</div>
+              <h3 className="text-xl font-bold mb-3 text-white uppercase tracking-wide">
+                Clean Slate
+              </h3>
+              <p className="text-gray-400 leading-relaxed">
+                A fresh start. No baggage. Just pure potential and unlimited
+                opportunity.
               </p>
             </div>
 
-            <div className="group bg-black rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border-4 border-white hover:scale-110 transform">
-              <div className="text-6xl mb-4 group-hover:scale-125 transition-transform">
-                💰
-              </div>
-              <h3 className="text-2xl font-black mb-3 text-white uppercase">
-                GET GAINS!
+            <div className="group bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-gray-800 hover:border-gray-600 transition-all duration-500 hover:scale-105">
+              <div className="text-5xl mb-6 opacity-60">⚡</div>
+              <h3 className="text-xl font-bold mb-3 text-white uppercase tracking-wide">
+                New Hope
               </h3>
-              <p className="text-gray-200 leading-relaxed font-bold">
-                Time to MOON! Join the rebirth! 🌕
+              <p className="text-gray-400 leading-relaxed">
+                Join a movement. Build with believers. Transform together.
               </p>
             </div>
           </div>
 
-          {/* CTA Statement - Memecoin Style */}
+          {/* About Rebirth - Emotional Section */}
+          <div className="max-w-4xl mx-auto scroll-animate opacity-0">
+            <div className="bg-gradient-to-br from-black to-gray-900 rounded-3xl p-12 md:p-16 shadow-2xl border-4 border-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl"></div>
+              <div className="relative z-10 space-y-6 text-white">
+                <h2 className="text-4xl md:text-5xl font-black uppercase text-center mb-8 tracking-tight">
+                  About Rebirth
+                </h2>
+
+                <p className="text-xl md:text-2xl leading-relaxed text-center font-bold">
+                  REBIRTH isn't just a meme coin — it's a{" "}
+                  <span className="text-yellow-300">comeback story</span>.
+                </p>
+
+                <p className="text-lg md:text-xl leading-relaxed text-gray-200 text-center">
+                  From the trenches to the moon, this project represents a fresh
+                  start. A clean slate. A second chance to enter early, to build
+                  something wild, and to ride with a community that actually
+                  moves.
+                </p>
+
+                <div className="pt-8 space-y-3 text-center">
+                  <p className="text-2xl md:text-3xl font-black">We rise.</p>
+                  <p className="text-2xl md:text-3xl font-black">We rebuild.</p>
+                  <p className="text-3xl md:text-4xl font-black text-yellow-300">
+                    We rebirth.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Statement - Clean & Powerful */}
           <div className="text-center scroll-animate opacity-0">
-            <div className="inline-flex items-center gap-4 bg-gradient-to-r from-black via-gray-900 to-black text-white px-12 py-6 rounded-full text-2xl md:text-4xl font-black shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-500 border-4 border-white">
+            <div className="inline-flex items-center gap-4 bg-white text-black px-12 py-6 rounded-full text-2xl md:text-3xl font-bold shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-500">
               <span className="text-4xl animate-bounce">⚡</span>
               <span>LFG! BUY NOW!</span>
               <span
@@ -167,11 +164,9 @@ export default function Home() {
 
           {/* DexScreener Embed */}
           <div className="max-w-6xl mx-auto scroll-animate opacity-0">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl p-6 border-4 border-black">
-              <h3 className="text-3xl md:text-4xl font-black text-center mb-6 uppercase flex items-center justify-center gap-3">
-                <span className="text-4xl">📊</span>
-                <span>LIVE CHART - WATCH US MOON!</span>
-                <span className="text-4xl">🚀</span>
+            <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl p-6 border border-gray-800">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 uppercase text-white tracking-wide">
+                Live Trading Chart
               </h3>
               <div className="w-full" style={{ minHeight: "500px" }}>
                 <iframe
