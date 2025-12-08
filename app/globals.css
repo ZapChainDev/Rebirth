@@ -71,6 +71,38 @@ body {
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
 }
 
+/* Navigation Styles */
+.historic-title-nav {
+  font-family: "Cinzel", serif;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 50%, #d0d0d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.historic-nav-link {
+  font-family: "Cinzel", serif;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.historic-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
+  transition: width 0.3s ease;
+}
+
+.historic-nav-link:hover::after {
+  width: 100%;
+}
+
 /* Modern Smooth Animations */
 @keyframes fadeIn {
   from {
@@ -1978,5 +2010,378 @@ html {
   .proclamation-text,
   .ledger-subtitle {
     color: #000;
+  }
+}
+
+/* ========================================
+   THESIS PAGE STYLES
+   ======================================== */
+
+/* Thesis Manuscript */
+.thesis-manuscript {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 4px solid #8b6f47;
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.thesis-manuscript::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.thesis-manuscript-final {
+  border-color: #a58759;
+  background: linear-gradient(135deg, #fff5e6 0%, #f0e4d0 50%, #f4e9d8 100%);
+}
+
+/* Manuscript Header */
+.manuscript-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.manuscript-ornament {
+  font-size: 2rem;
+  color: #8b6f47;
+  opacity: 0.8;
+}
+
+.manuscript-section-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #5a4428;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Manuscript Content */
+.manuscript-content {
+  position: relative;
+  z-index: 1;
+  space-y: 1.5rem;
+}
+
+.manuscript-text {
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: #3a3a3a;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+.manuscript-emphasis {
+  font-weight: 600;
+  color: #5a4428;
+  font-size: 1.25rem;
+}
+
+/* Manuscript Quote */
+.manuscript-quote {
+  background: rgba(139, 111, 71, 0.1);
+  border-left: 4px solid #8b6f47;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+  border-radius: 4px;
+}
+
+.manuscript-quote-emphasis {
+  background: rgba(139, 111, 71, 0.15);
+  border-left: 6px solid #a58759;
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.2);
+}
+
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  color: #8b6f47;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  line-height: 1;
+}
+
+.quote-mark-end {
+  top: auto;
+  bottom: -1rem;
+  left: auto;
+  right: 1rem;
+}
+
+.quote-text {
+  font-family: "Cinzel", serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #5a4428;
+  font-style: italic;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-attribution {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #6b5536;
+  text-align: right;
+  margin-top: 1rem;
+  padding-right: 2rem;
+  font-weight: 600;
+}
+
+/* Comparison Cards */
+.thesis-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.comparison-card {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 100%);
+  border: 3px solid #8b6f47;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.comparison-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.comparison-old {
+  border-color: #8b6f47;
+  opacity: 0.85;
+}
+
+.comparison-new {
+  border-color: #a58759;
+  background: linear-gradient(135deg, #fff5e6 0%, #f0e4d0 100%);
+}
+
+.comparison-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0.3) sepia(0.4);
+}
+
+.comparison-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #5a4428;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.comparison-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #6b5536;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-list li {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #4a4a4a;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(139, 111, 71, 0.2);
+}
+
+.comparison-list li:last-child {
+  border-bottom: none;
+}
+
+.comparison-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-arrow {
+  font-size: 3rem;
+  color: #8b6f47;
+  font-weight: bold;
+}
+
+/* Manuscript Comparison Box */
+.manuscript-comparison-box {
+  background: rgba(139, 111, 71, 0.1);
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.comparison-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.comparison-label {
+  font-family: "Cinzel", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #5a4428;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.comparison-description {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+.comparison-divider-small {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #8b6f47;
+  margin: 1rem 0;
+}
+
+/* Final Statement */
+.manuscript-final-statement {
+  background: rgba(139, 111, 71, 0.15);
+  border: 3px solid #a58759;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.final-line {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #5a4428;
+  margin: 1rem 0;
+  letter-spacing: 0.05em;
+}
+
+.final-line-emphasis {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Thesis Page */
+@media (max-width: 768px) {
+  .thesis-comparison {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .comparison-divider {
+    transform: rotate(90deg);
+  }
+
+  .comparison-arrow {
+    font-size: 2rem;
+  }
+
+  .manuscript-section-title {
+    font-size: 1.25rem;
+  }
+
+  .manuscript-text {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .quote-text {
+    font-size: 1.125rem;
+    padding: 0 1rem;
+  }
+
+  .comparison-title {
+    font-size: 1.5rem;
+  }
+
+  .final-line {
+    font-size: 1.25rem;
+  }
+
+  .final-line-emphasis {
+    font-size: 1.75rem;
+  }
+
+  .thesis-manuscript {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .manuscript-section-title {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .manuscript-text {
+    font-size: 0.9375rem;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .comparison-icon {
+    font-size: 3rem;
+  }
+
+  .comparison-card {
+    padding: 1.5rem 1rem;
   }
 }
