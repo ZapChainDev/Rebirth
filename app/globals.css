@@ -647,3 +647,928 @@ html {
   width: 5px;
   height: 5px;
 }
+
+/* Ancient Book Styles */
+.ancient-book {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 3px solid #8b6f47;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 0 1px rgba(139, 111, 71, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.ancient-book::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* Book Header */
+.book-header {
+  background: linear-gradient(to bottom, #8b6f47, #6b5536);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #5a4428;
+  position: relative;
+}
+
+.book-ornament-top,
+.book-ornament-bottom {
+  font-size: 2rem;
+  color: #f4e9d8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.book-title {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f4e9d8;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  margin: 1rem 0;
+  letter-spacing: 0.1em;
+}
+
+.book-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  color: #d4c4a8;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Book Pages */
+.book-pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  min-height: 500px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .book-pages {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Center Binding */
+.book-pages::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #8b6f47 10%,
+    #8b6f47 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2), 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .book-pages::after {
+    display: none;
+  }
+}
+
+/* Individual Pages */
+.book-page {
+  position: relative;
+  font-family: "Cinzel", serif;
+}
+
+.book-page-left {
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(139, 111, 71, 0.2);
+}
+
+.book-page-right {
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(139, 111, 71, 0.2);
+}
+
+@media (max-width: 768px) {
+  .book-page-left,
+  .book-page-right {
+    padding: 0;
+    border: none;
+  }
+}
+
+/* Page Numbers */
+.page-number {
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+  color: #8b6f47;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Drop Cap */
+.drop-cap-container {
+  position: relative;
+}
+
+.drop-cap {
+  font-family: "Cinzel", serif;
+  float: left;
+  font-size: 4.5rem;
+  line-height: 3.5rem;
+  margin: 0.2rem 0.75rem 0 0;
+  color: #8b6f47;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Book Text */
+.book-text {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #3a3a3a;
+  text-align: justify;
+  text-indent: 0;
+}
+
+.book-highlight {
+  color: #8b6f47;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Verse Styling */
+.book-verse {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.verse-line {
+  font-family: "Cinzel", serif;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #4a4a4a;
+  font-style: italic;
+}
+
+.verse-line-emphasis {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  line-height: 2.5;
+  color: #8b6f47;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Book Seal */
+.book-seal {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.seal-circle {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #8b6f47;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #f4e9d8, #e8dcc5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.seal-circle::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px solid #8b6f47;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.seal-text {
+  font-family: "Cinzel", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #8b6f47;
+  letter-spacing: 0.1em;
+}
+
+.seal-year {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  color: #6b5536;
+  margin-top: 0.25rem;
+  letter-spacing: 0.15em;
+}
+
+/* Book Footer */
+.book-footer {
+  background: linear-gradient(to top, #8b6f47, #6b5536);
+  padding: 1rem;
+  text-align: center;
+  border-top: 3px solid #5a4428;
+}
+
+.book-footer-text {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  color: #d4c4a8;
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+
+/* Historic Scroll Cards */
+.historic-scroll {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 3px solid #8b6f47;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.historic-scroll::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+.historic-scroll:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: #a58759;
+}
+
+/* Scroll Ornaments */
+.scroll-ornament,
+.scroll-ornament-bottom {
+  font-size: 1.5rem;
+  color: #8b6f47;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.scroll-ornament-bottom {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* Scroll Icon */
+.scroll-icon {
+  font-size: 3.5rem;
+  margin: 1rem 0;
+  filter: grayscale(0.3) sepia(0.4);
+  opacity: 0.85;
+}
+
+/* Scroll Title */
+.scroll-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5a4428;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll Text */
+.scroll-text {
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Historic Proclamation */
+.historic-proclamation {
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 4px solid #8b6f47;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.historic-proclamation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.historic-proclamation:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Proclamation Header/Footer */
+.proclamation-header,
+.proclamation-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.proclamation-footer {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.proclamation-ornament {
+  font-size: 1.5rem;
+  color: #8b6f47;
+  opacity: 0.8;
+}
+
+.proclamation-divider {
+  font-size: 1.25rem;
+  color: #8b6f47;
+  opacity: 0.6;
+}
+
+/* Proclamation Content */
+.proclamation-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.proclamation-title {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5a4428;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.proclamation-text {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  color: #6b5536;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.proclamation-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(139, 111, 71, 0.15);
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+}
+
+.proclamation-action {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #5a4428;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .proclamation-action {
+    font-size: 1.25rem;
+  }
+}
+
+.proclamation-icon {
+  font-size: 2rem;
+  filter: grayscale(0.5) sepia(0.5);
+  animation: proclamationBounce 2s ease-in-out infinite;
+}
+
+@keyframes proclamationBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.proclamation-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6b5536;
+  margin-top: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Historic Buttons */
+.historic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 3px solid #8b6f47;
+  border-radius: 8px;
+  min-width: 240px;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.historic-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+.historic-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.historic-button-green {
+  background: linear-gradient(135deg, #6b8e5f 0%, #5a7a4e 100%);
+  color: #f4e9d8;
+  border-color: #4a6a3e;
+}
+
+.historic-button-green:hover {
+  background: linear-gradient(135deg, #7a9e6f 0%, #6a8a5e 100%);
+  border-color: #5a7a4e;
+}
+
+.historic-button-dark {
+  background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+  color: #f4e9d8;
+  border-color: #2a2a2a;
+}
+
+.historic-button-dark:hover {
+  background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+  border-color: #3a3a3a;
+}
+
+.historic-button-light {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 100%);
+  color: #5a4428;
+  border-color: #8b6f47;
+}
+
+.historic-button-light:hover {
+  background: linear-gradient(135deg, #fff5e6 0%, #f0e4d0 100%);
+  border-color: #a58759;
+}
+
+.historic-button-ornament {
+  font-size: 1.25rem;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.historic-button-text {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+}
+
+@media (max-width: 640px) {
+  .historic-button {
+    min-width: 200px;
+    padding: 1rem 2rem;
+  }
+
+  .historic-button-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Historic Contract Seal */
+.historic-contract-seal {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 4px solid #8b6f47;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.historic-contract-seal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.contract-seal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contract-seal-ornament {
+  font-size: 1.75rem;
+  color: #8b6f47;
+  opacity: 0.8;
+}
+
+.contract-seal-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5a4428;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contract-seal-title {
+    font-size: 1.125rem;
+  }
+}
+
+.contract-seal-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.contract-seal-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  color: #6b5536;
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.contract-seal-address {
+  background: rgba(139, 111, 71, 0.15);
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.contract-seal-address:hover {
+  background: rgba(139, 111, 71, 0.25);
+  border-color: #a58759;
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
+.contract-address-text {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  color: #5a4428;
+  word-break: break-all;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.contract-address-text:hover {
+  color: #8b6f47;
+}
+
+@media (max-width: 768px) {
+  .contract-address-text {
+    font-size: 0.75rem;
+  }
+}
+
+.contract-seal-footer {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  color: #6b5536;
+  font-style: italic;
+  margin-top: 1rem;
+  letter-spacing: 0.15em;
+}
+
+/* Historic Video Frame */
+.historic-video-frame {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 4px solid #8b6f47;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.historic-video-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.video-frame-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.video-frame-ornament {
+  font-size: 1.5rem;
+  color: #8b6f47;
+  opacity: 0.8;
+}
+
+.video-frame-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #5a4428;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .video-frame-title {
+    font-size: 1.25rem;
+  }
+}
+
+.video-frame-content {
+  position: relative;
+  z-index: 1;
+  background: #2a2a2a;
+  border: 3px solid #8b6f47;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 2px rgba(139, 111, 71, 0.2);
+}
+
+.video-frame-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid rgba(139, 111, 71, 0.3);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-frame-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.video-frame-caption {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #6b5536;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+/* Historic Trading Ledger */
+.historic-trading-ledger {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 4px solid #8b6f47;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.historic-trading-ledger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.ledger-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ledger-ornament {
+  font-size: 1.75rem;
+  color: #8b6f47;
+  opacity: 0.8;
+}
+
+.ledger-title {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5a4428;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .ledger-title {
+    font-size: 1.5rem;
+  }
+}
+
+.ledger-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #6b5536;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+
+.ledger-chart-container {
+  position: relative;
+  z-index: 1;
+  background: #2a2a2a;
+  border: 3px solid #8b6f47;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 2px rgba(139, 111, 71, 0.2);
+}
+
+.ledger-chart-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid rgba(139, 111, 71, 0.3);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ledger-footer {
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ledger-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b5536;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  background: rgba(139, 111, 71, 0.1);
+  transition: all 0.3s ease;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ledger-link:hover {
+  background: rgba(139, 111, 71, 0.2);
+  border-color: #a58759;
+  color: #5a4428;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
+.ledger-link-ornament {
+  font-size: 1.25rem;
+  color: #8b6f47;
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .ledger-link {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.5rem;
+  }
+}
