@@ -1572,3 +1572,411 @@ html {
     padding: 0.625rem 1.5rem;
   }
 }
+
+/* ========================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+   Mobile-First for All Devices
+   ======================================== */
+
+/* Base Mobile Styles (320px - 480px) */
+@media (max-width: 480px) {
+  /* Loading Screen */
+  .mystery-text-reveal {
+    font-size: 3rem !important;
+  }
+
+  .mystery-subtitle {
+    font-size: 1rem !important;
+    padding: 0 1rem;
+  }
+
+  /* Historic Title Hero */
+  .historic-title-hero {
+    font-size: 3.5rem !important;
+    line-height: 1.1;
+  }
+
+  /* Ancient Book */
+  .ancient-book {
+    margin: 0 0.5rem;
+  }
+
+  .book-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .book-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .book-pages {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .drop-cap {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .book-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .verse-line {
+    font-size: 1rem;
+  }
+
+  .verse-line-emphasis {
+    font-size: 1.25rem;
+  }
+
+  .seal-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .seal-text {
+    font-size: 1rem;
+  }
+
+  /* Historic Scrolls */
+  .historic-scroll {
+    padding: 1.5rem;
+  }
+
+  .scroll-icon {
+    font-size: 2.5rem;
+  }
+
+  .scroll-title {
+    font-size: 1.125rem;
+  }
+
+  .scroll-text {
+    font-size: 0.875rem;
+  }
+
+  /* Proclamation */
+  .historic-proclamation {
+    padding: 1.5rem 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .proclamation-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+  }
+
+  .proclamation-text {
+    font-size: 0.75rem;
+  }
+
+  .proclamation-action {
+    font-size: 1rem;
+  }
+
+  .proclamation-main {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .proclamation-icon {
+    font-size: 1.5rem;
+  }
+
+  .proclamation-subtitle {
+    font-size: 0.875rem;
+  }
+
+  /* Trading Ledger */
+  .historic-trading-ledger {
+    padding: 1.5rem 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .ledger-title {
+    font-size: 1.25rem;
+  }
+
+  .ledger-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .ledger-chart-container {
+    border-width: 2px;
+  }
+
+  /* Video Frame */
+  .historic-video-frame {
+    padding: 1.5rem 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .video-frame-title {
+    font-size: 1rem;
+  }
+
+  .video-frame-content {
+    border-width: 2px;
+  }
+
+  /* Historic Buttons */
+  .historic-button {
+    padding: 1rem 1.5rem;
+    min-width: 180px;
+    font-size: 0.75rem;
+  }
+
+  .historic-button-ornament {
+    font-size: 1rem;
+  }
+
+  /* Contract Seal */
+  .historic-contract-seal {
+    padding: 1.5rem 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .contract-seal-title {
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+  }
+
+  .contract-seal-address {
+    padding: 1rem;
+  }
+
+  .contract-address-text {
+    font-size: 0.625rem;
+  }
+}
+
+/* Tablet Portrait (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .historic-title-hero {
+    font-size: 5rem;
+  }
+
+  .book-title {
+    font-size: 2rem;
+  }
+
+  .ancient-book {
+    margin: 0 1rem;
+  }
+
+  .book-pages {
+    padding: 2rem 1.5rem;
+  }
+
+  .historic-scroll {
+    padding: 1.75rem;
+  }
+
+  .scroll-title {
+    font-size: 1.25rem;
+  }
+
+  .proclamation-title {
+    font-size: 1.5rem;
+  }
+
+  .proclamation-action {
+    font-size: 1.25rem;
+  }
+
+  .ledger-title {
+    font-size: 1.5rem;
+  }
+
+  .video-frame-title {
+    font-size: 1.25rem;
+  }
+
+  .historic-button {
+    min-width: 200px;
+    padding: 1.125rem 2rem;
+  }
+
+  .contract-seal-title {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Landscape & Small Desktop (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .historic-title-hero {
+    font-size: 6rem;
+  }
+
+  .book-title {
+    font-size: 2.25rem;
+  }
+
+  .book-pages {
+    padding: 2.5rem 2rem;
+  }
+
+  .proclamation-action {
+    font-size: 1.5rem;
+  }
+
+  .ledger-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase tap targets for mobile */
+  .historic-button,
+  .ledger-link,
+  .historic-scroll,
+  .book-seal {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .historic-scroll:hover,
+  .historic-button:hover,
+  .historic-proclamation:hover {
+    transform: none;
+  }
+
+  /* Add active states instead */
+  .historic-scroll:active,
+  .historic-button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+/* Landscape Orientation Fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+  .mystery-text-reveal {
+    font-size: 3rem !important;
+  }
+
+  .fog-container,
+  .smoke-container-loading {
+    height: 150vh;
+  }
+
+  .book-pages {
+    min-height: auto;
+  }
+
+  .ledger-chart-container {
+    min-height: 400px !important;
+  }
+}
+
+/* Extra Small Devices (< 320px) */
+@media (max-width: 320px) {
+  .historic-title-hero {
+    font-size: 2.5rem !important;
+  }
+
+  .book-title {
+    font-size: 1.5rem;
+  }
+
+  .proclamation-action {
+    font-size: 0.875rem;
+  }
+
+  .historic-button {
+    min-width: 150px;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.625rem;
+  }
+
+  .contract-address-text {
+    font-size: 0.5rem;
+  }
+}
+
+/* Large Devices (> 1440px) */
+@media (min-width: 1441px) {
+  .ancient-book,
+  .historic-proclamation,
+  .historic-trading-ledger,
+  .historic-video-frame,
+  .historic-contract-seal {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .historic-title-hero {
+    font-size: 8rem;
+  }
+
+  .book-title {
+    font-size: 3rem;
+  }
+
+  .ledger-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .loading-screen,
+  .fog-container,
+  .smoke-container,
+  .mysterious-particles {
+    display: none !important;
+  }
+
+  .ancient-book,
+  .historic-scroll,
+  .historic-proclamation {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fog,
+  .smoke,
+  .smoke-loading,
+  .particle {
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .ancient-book,
+  .historic-scroll,
+  .historic-proclamation,
+  .historic-trading-ledger,
+  .historic-video-frame,
+  .historic-contract-seal {
+    border-width: 3px;
+    border-color: #000;
+  }
+
+  .book-text,
+  .scroll-text,
+  .proclamation-text,
+  .ledger-subtitle {
+    color: #000;
+  }
+}
