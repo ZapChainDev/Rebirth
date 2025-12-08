@@ -94,31 +94,31 @@ export default function Home() {
 
         {/* Navigation Header */}
         <nav className="fixed top-0 left-0 right-0 z-40 bg-black/40 backdrop-blur-md border-b border-gray-800/50">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Link
                 href="/"
-                className="text-2xl font-black historic-title-nav cursor-pointer hover:opacity-80 transition-opacity duration-300"
+                className="text-lg sm:text-xl md:text-2xl font-black historic-title-nav cursor-pointer hover:opacity-80 transition-opacity duration-300"
               >
                 REBIRTH
               </Link>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
               <Link
                 href="/thesis"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
               >
-                ⚜ The Thesis
+                <span className="hidden sm:inline">⚜ </span>Thesis
               </Link>
               <a
                 href="#about"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
               >
                 Chronicle
               </a>
               <a
                 href="#acquire"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
               >
                 Acquire
               </a>
