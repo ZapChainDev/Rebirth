@@ -66,7 +66,7 @@ export default function Home() {
             </div>
 
             {/* Logo/Text with Mystery Reveal */}
-            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-wider relative z-10 mystery-text-reveal">
+            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-wider relative z-10 mystery-text-reveal historic-title">
               <span className="bg-gradient-to-r from-gray-500 via-white to-gray-500 text-transparent bg-clip-text">
                 Rebirth
               </span>
@@ -106,10 +106,7 @@ export default function Home() {
             <div className="text-center space-y-6 animate-slideDown">
               <div className="inline-block relative">
                 <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-white/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
-                <h1
-                  className="text-7xl md:text-9xl font-black tracking-tighter bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent"
-                  style={{ textShadow: "0 0 80px rgba(255,255,255,0.3)" }}
-                >
+                <h1 className="text-7xl md:text-9xl font-black tracking-tighter historic-title-hero">
                   REBIRTH
                 </h1>
                 <div className="h-1 w-full bg-gradient-to-r from-transparent via-white to-transparent mt-4 animate-expandWidth"></div>
