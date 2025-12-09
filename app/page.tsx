@@ -104,6 +104,15 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+              <a
+                href="https://x.com/RebirthNewHope"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-x-link"
+                title="Follow us on X"
+              >
+                𝕏
+              </a>
               <Link
                 href="/thesis"
                 className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
@@ -435,6 +444,15 @@ export default function Home() {
                     <div className="member-icon">⚔</div>
                     <h3 className="member-name">MARV • REBIRTH ARK</h3>
                     <p className="member-role">Lead Developer</p>
+                    <a
+                      href="https://x.com/marvCalledIt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="member-social"
+                    >
+                      <span className="social-icon">𝕏</span>
+                      <span>@marvCalledIt</span>
+                    </a>
                     <div className="member-wallet">
                       <p className="wallet-label">Dev Wallet:</p>
                       <code className="wallet-address">
@@ -448,6 +466,15 @@ export default function Home() {
                     <div className="member-icon">📜</div>
                     <h3 className="member-name">Syverin | Rebirth ARC</h3>
                     <p className="member-role">Telegram Manager</p>
+                    <a
+                      href="https://x.com/Syverinjnmf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="member-social"
+                    >
+                      <span className="social-icon">𝕏</span>
+                      <span>@Syverinjnmf</span>
+                    </a>
                     <div className="member-wallet">
                       <p className="wallet-label">TG Manager Wallet:</p>
                       <code className="wallet-address">
@@ -461,6 +488,15 @@ export default function Home() {
                     <div className="member-icon">🏛</div>
                     <h3 className="member-name">JinxSorrel • Rebirth Ark</h3>
                     <p className="member-role">Web Developer</p>
+                    <a
+                      href="https://x.com/SweetArcaneJinx"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="member-social"
+                    >
+                      <span className="social-icon">𝕏</span>
+                      <span>@SweetArcaneJinx</span>
+                    </a>
                     <div className="member-wallet">
                       <p className="wallet-label">Website Dev Wallet:</p>
                       <code className="wallet-address">
@@ -474,6 +510,15 @@ export default function Home() {
                     <div className="member-icon">🔒</div>
                     <h3 className="member-name">WaiterG Locked Wallet</h3>
                     <p className="member-role">50M Tokens Locked</p>
+                    <a
+                      href="https://x.com/WaiterG"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="member-social"
+                    >
+                      <span className="social-icon">𝕏</span>
+                      <span>@WaiterG</span>
+                    </a>
                     <div className="member-wallet">
                       <p className="wallet-label">Locked Wallet:</p>
                       <code className="wallet-address">
