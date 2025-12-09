@@ -469,6 +469,19 @@ export default function Home() {
                     </div>
                     <div className="member-divider">✦</div>
                   </div>
+
+                  <div className="team-member team-member-locked">
+                    <div className="member-icon">🔒</div>
+                    <h3 className="member-name">WaiterG Locked Wallet</h3>
+                    <p className="member-role">50M Tokens Locked</p>
+                    <div className="member-wallet">
+                      <p className="wallet-label">Locked Wallet:</p>
+                      <code className="wallet-address">
+                        9hpzqLMk3y4yPj3tVf9q7CCaz6QbVMUHF8LGUghE41NG
+                      </code>
+                    </div>
+                    <div className="member-divider">✦</div>
+                  </div>
                 </div>
               </div>
             </div>
