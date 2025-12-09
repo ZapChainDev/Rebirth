@@ -150,7 +150,7 @@ export default function Home() {
             <div className="text-center space-y-6 animate-slideDown">
               <div className="inline-block relative">
                 <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-white/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
-                <h1 className="text-7xl md:text-9xl font-black tracking-tighter historic-title-hero">
+                <h1 className="text-7xl md:text-9xl font-black tracking-tighter historic-title-hero fire-text">
                   REBIRTH
                 </h1>
                 <div className="h-1 w-full bg-gradient-to-r from-transparent via-white to-transparent mt-4 animate-expandWidth"></div>

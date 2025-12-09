@@ -71,6 +71,53 @@ body {
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
 }
 
+/* Fire Text Effect */
+.fire-text {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffeb3b 10%,
+    #ff9800 30%,
+    #ff5722 50%,
+    #f44336 70%,
+    #d32f2f 90%,
+    #8b0000 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 100% 200%;
+  animation: fireGlow 3s ease-in-out infinite,
+    fireFlicker 0.15s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 140, 0, 0.6),
+    0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 69, 0, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.3),
+    6px 6px 0 rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.6));
+}
+
+@keyframes fireGlow {
+  0%,
+  100% {
+    background-position: 0% 0%;
+    filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.6)) brightness(1);
+  }
+  50% {
+    background-position: 0% 100%;
+    filter: drop-shadow(0 0 50px rgba(255, 140, 0, 0.8)) brightness(1.2);
+  }
+}
+
+@keyframes fireFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
 /* Navigation Styles */
 .historic-title-nav {
   font-family: "Cinzel", serif;
