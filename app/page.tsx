@@ -420,6 +420,59 @@ export default function Home() {
               </a>
             </div>
 
+            {/* Team Section - Historic Council */}
+            <div className="max-w-5xl mx-auto scroll-animate opacity-0">
+              <div className="historic-team-section">
+                <div className="team-header">
+                  <span className="team-ornament-top">⚜</span>
+                  <h2 className="team-title">The Council of Rebirth</h2>
+                  <span className="team-ornament-top">⚜</span>
+                  <p className="team-subtitle">Guardians of the New Dawn</p>
+                </div>
+
+                <div className="team-members">
+                  <div className="team-member">
+                    <div className="member-icon">⚔</div>
+                    <h3 className="member-name">MARV • REBIRTH ARK</h3>
+                    <p className="member-role">Lead Developer</p>
+                    <div className="member-wallet">
+                      <p className="wallet-label">Dev Wallet:</p>
+                      <code className="wallet-address">
+                        CeVyfo1uLgt6dLDyXZuUFL7ZkgsUsWA5FENGf2mdSGRb
+                      </code>
+                    </div>
+                    <div className="member-divider">✦</div>
+                  </div>
+
+                  <div className="team-member">
+                    <div className="member-icon">📜</div>
+                    <h3 className="member-name">Syverin | Rebirth ARC</h3>
+                    <p className="member-role">Telegram Manager</p>
+                    <div className="member-wallet">
+                      <p className="wallet-label">TG Manager Wallet:</p>
+                      <code className="wallet-address">
+                        CmBh5b67HQZ996J1DDmp9fm84Msdh5zEQ7z87KVYWoL6
+                      </code>
+                    </div>
+                    <div className="member-divider">✦</div>
+                  </div>
+
+                  <div className="team-member">
+                    <div className="member-icon">🏛</div>
+                    <h3 className="member-name">JinxSorrel • Rebirth Ark</h3>
+                    <p className="member-role">Web Developer</p>
+                    <div className="member-wallet">
+                      <p className="wallet-label">Website Dev Wallet:</p>
+                      <code className="wallet-address">
+                        4byGAQrAJiHGjPAeu83HPG9Sg26bUx7hvg1mhxwDcByk
+                      </code>
+                    </div>
+                    <div className="member-divider">✦</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Contract Address - Historic Seal */}
             <div className="max-w-3xl mx-auto scroll-animate opacity-0">
               <div className="historic-contract-seal">
