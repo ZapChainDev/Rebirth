@@ -49,7 +49,6 @@ export default function ThesisPage() {
               REBIRTH
             </Link>
           </div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
             <a
@@ -79,8 +78,13 @@ export default function ThesisPage() {
             >
               ⚜ Thesis
             </Link>
-          </div>
-
+            <Link
+              href="/whales"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+            >
+              🐋 Whales
+            </Link>
+          </div>{" "}
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center gap-3">
             <a
@@ -172,9 +176,15 @@ export default function ThesisPage() {
             </Link>
             <Link
               href="/thesis"
-              className="historic-nav-link text-white py-2 px-3 rounded bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+              className="block text-white transition-colors font-semibold tracking-wider uppercase text-center py-2"
             >
               ⚜ Thesis
+            </Link>
+            <Link
+              href="/whales"
+              className="block text-gray-300 hover:text-white transition-colors font-semibold tracking-wider uppercase text-center py-2"
+            >
+              🐋 Whales
             </Link>
           </div>
         </div>

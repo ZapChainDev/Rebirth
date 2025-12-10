@@ -133,6 +133,12 @@ export default function Home() {
               >
                 ⚜ Thesis
               </Link>
+              <Link
+                href="/whales"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+              >
+                🐋 Whales
+              </Link>
               <a
                 href="#about"
                 className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
@@ -241,6 +247,12 @@ export default function Home() {
                 className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
               >
                 ⚜ Thesis
+              </Link>
+              <Link
+                href="/whales"
+                className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+              >
+                🐋 Whales
               </Link>
               <a
                 href="#about"

@@ -3324,6 +3324,10 @@ html {
 
 /* Hamburger icon animation */
 .hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
   transition: all 0.3s ease;
   transform-origin: center;
 }
