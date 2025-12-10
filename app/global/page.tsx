@@ -316,12 +316,13 @@ export default function RebirthGlobal() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center scroll-animate opacity-0">
+          <div className="text-center scroll-animate opacity-0 relative z-20">
             <a
               href="https://x.com/RebirthNewHope"
               target="_blank"
               rel="noopener noreferrer"
-              className="historic-button historic-button-green"
+              className="historic-button historic-button-green inline-flex"
+              style={{ position: "relative", zIndex: 20 }}
             >
               <span className="historic-button-ornament">✦</span>
               <span className="historic-button-text">JOIN THE MOVEMENT</span>

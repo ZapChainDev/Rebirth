@@ -3262,4 +3262,19 @@ html {
   .stat-label {
     font-size: 0.75rem;
   }
+
+  /* Ensure button is visible on mobile */
+  .historic-button {
+    min-width: 180px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .historic-button-ornament {
+    font-size: 1rem;
+  }
+
+  .historic-button-text {
+    font-size: 0.75rem;
+  }
 }
