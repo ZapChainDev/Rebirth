@@ -429,6 +429,56 @@ export default function Home() {
               </a>
             </div>
 
+            {/* Listings Section - Where to Buy */}
+            <div className="max-w-5xl mx-auto scroll-animate opacity-0">
+              <div className="historic-listings-section">
+                <div className="listings-header">
+                  <span className="listings-ornament-top">⚜</span>
+                  <h2 className="listings-title">Where to Buy</h2>
+                  <span className="listings-ornament-top">⚜</span>
+                  <p className="listings-subtitle">
+                    Acquire Your $REBIRTH Tokens
+                  </p>
+                </div>
+
+                <div className="listings-grid">
+                  <a
+                    href="https://www.coingecko.com/en/coins/rebirth-and-new-hope"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="listing-card"
+                  >
+                    <div className="listing-icon">🦎</div>
+                    <h3 className="listing-name">CoinGecko</h3>
+                    <p className="listing-description">
+                      Buy & track your investment
+                    </p>
+                    <div className="listing-badge">Listed ✓</div>
+                  </a>
+
+                  <a
+                    href="https://phantom.com/tokens/solana/8mgM8w9BDeZvL1pm86xPDvPw9XHL3vwXkFBqU693pump"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="listing-card"
+                  >
+                    <div className="listing-icon">👻</div>
+                    <h3 className="listing-name">Phantom Wallet</h3>
+                    <p className="listing-description">
+                      Trade directly in your wallet
+                    </p>
+                    <div className="listing-badge">Listed ✓</div>
+                  </a>
+                </div>
+
+                <div className="listings-footer">
+                  <p className="listings-coming-soon">
+                    ⚡ More listings coming soon ⚡
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Team Section - Historic Council */}
             <div className="max-w-5xl mx-auto scroll-animate opacity-0">
               <div className="historic-team-section">
@@ -501,6 +551,19 @@ export default function Home() {
                       <p className="wallet-label">Website Dev Wallet:</p>
                       <code className="wallet-address">
                         4byGAQrAJiHGjPAeu83HPG9Sg26bUx7hvg1mhxwDcByk
+                      </code>
+                    </div>
+                    <div className="member-divider">✦</div>
+                  </div>
+
+                  <div className="team-member">
+                    <div className="member-icon">🗺️</div>
+                    <h3 className="member-name">TropicViper • REBIRTH ARK</h3>
+                    <p className="member-role">Road Map Captain</p>
+                    <div className="member-wallet">
+                      <p className="wallet-label">Road Map Captain Wallet:</p>
+                      <code className="wallet-address">
+                        GKQYuVicuXMVBR6omcDYF1FFGbctzLg26i1GnpSMMaDq
                       </code>
                     </div>
                     <div className="member-divider">✦</div>
