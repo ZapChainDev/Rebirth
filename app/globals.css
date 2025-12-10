@@ -3284,12 +3284,20 @@ html {
   animation: slideDown 0.3s ease-out forwards;
   transform-origin: top;
   display: block !important;
+  visibility: visible !important;
 }
 
 .mobile-menu-exit {
   animation: slideUp 0.3s ease-out forwards;
   transform-origin: top;
   display: block !important;
+  visibility: visible !important;
+  pointer-events: none;
+}
+
+.mobile-menu-hidden {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 @keyframes slideDown {
@@ -3320,15 +3328,15 @@ html {
   transform-origin: center;
 }
 
-.hamburger-open .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translateY(6px);
+.hamburger-open .hamburger-line:first-child {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-open .hamburger-line:nth-child(2) {
   opacity: 0;
-  transform: translateX(-10px);
+  transform: scale(0);
 }
 
-.hamburger-open .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translateY(-6px);
+.hamburger-open .hamburger-line:last-child {
+  transform: rotate(-45deg) translate(5px, -5px);
 }

@@ -98,20 +98,26 @@ export default function ThesisPage() {
                 const menu = document.getElementById("mobile-menu-thesis");
                 if (menu) {
                   button.classList.toggle("hamburger-open");
-                  if (menu.classList.contains("hidden")) {
+                  if (
+                    menu.classList.contains("mobile-menu-hidden") ||
+                    menu.classList.contains("hidden")
+                  ) {
                     menu.classList.remove("hidden");
+                    menu.classList.remove("mobile-menu-hidden");
                     menu.classList.remove("mobile-menu-exit");
                     menu.classList.add("mobile-menu-enter");
                   } else {
                     menu.classList.remove("mobile-menu-enter");
                     menu.classList.add("mobile-menu-exit");
                     setTimeout(() => {
-                      menu.classList.add("hidden");
+                      menu.classList.add("mobile-menu-hidden");
+                      menu.classList.remove("mobile-menu-exit");
                     }, 300);
                   }
                 }
+                button.blur();
               }}
-              className="text-white p-2 hover:bg-white/10 rounded transition-all duration-300"
+              className="text-white p-2 hover:bg-white/10 active:bg-white/10 rounded transition-all duration-300"
               aria-label="Toggle menu"
             >
               <svg
@@ -149,7 +155,7 @@ export default function ThesisPage() {
         {/* Mobile Menu Dropdown */}
         <div
           id="mobile-menu-thesis"
-          className="hidden md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50 overflow-hidden relative z-50"
+          className="mobile-menu-hidden md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50 overflow-hidden relative z-50"
         >
           <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
             <Link
