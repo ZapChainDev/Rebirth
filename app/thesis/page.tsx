@@ -38,19 +38,144 @@ export default function ThesisPage() {
         <div className="smoke smoke-4"></div>
       </div>
 
-      <div className="relative z-10 py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-16">
-          {/* Back Button */}
-          <div className="scroll-animate opacity-0">
+      {/* Navigation Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-gray-800/50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="historic-button historic-button-dark inline-flex"
+              className="text-lg sm:text-xl md:text-2xl font-black historic-title-nav cursor-pointer hover:opacity-80 transition-opacity duration-300"
             >
-              <span className="historic-button-ornament">←</span>
-              <span className="historic-button-text">Return Home</span>
+              REBIRTH
             </Link>
           </div>
 
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
+            <a
+              href="https://x.com/RebirthNewHope"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-x-link"
+              title="Follow us on X"
+            >
+              𝕏
+            </a>
+            <Link
+              href="/"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+            >
+              Home
+            </Link>
+            <Link
+              href="/global"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+            >
+              🌍 Global
+            </Link>
+            <Link
+              href="/thesis"
+              className="historic-nav-link text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+            >
+              ⚜ Thesis
+            </Link>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center gap-3">
+            <a
+              href="https://x.com/RebirthNewHope"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-x-link text-xl"
+              title="Follow us on X"
+            >
+              𝕏
+            </a>
+            <button
+              onClick={(e) => {
+                const button = e.currentTarget;
+                const menu = document.getElementById("mobile-menu-thesis");
+                if (menu) {
+                  button.classList.toggle("hamburger-open");
+                  if (menu.classList.contains("hidden")) {
+                    menu.classList.remove("hidden");
+                    menu.classList.remove("mobile-menu-exit");
+                    menu.classList.add("mobile-menu-enter");
+                  } else {
+                    menu.classList.remove("mobile-menu-enter");
+                    menu.classList.add("mobile-menu-exit");
+                    setTimeout(() => {
+                      menu.classList.add("hidden");
+                    }, 300);
+                  }
+                }
+              }}
+              className="text-white p-2 hover:bg-white/10 rounded transition-all duration-300"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  className="hamburger-line"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16"
+                />
+                <path
+                  className="hamburger-line"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 12h16"
+                />
+                <path
+                  className="hamburger-line"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        <div
+          id="mobile-menu-thesis"
+          className="hidden md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50 overflow-hidden relative z-50"
+        >
+          <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+            <Link
+              href="/"
+              className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+            >
+              Home
+            </Link>
+            <Link
+              href="/global"
+              className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+            >
+              🌍 Global
+            </Link>
+            <Link
+              href="/thesis"
+              className="historic-nav-link text-white py-2 px-3 rounded bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+            >
+              ⚜ Thesis
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <div className="relative z-10 pt-32 pb-20 px-4">
+        <div className="max-w-6xl mx-auto space-y-16">
           {/* Title */}
           <div className="text-center scroll-animate opacity-0">
             <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter historic-title-hero mb-6">

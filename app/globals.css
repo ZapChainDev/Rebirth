@@ -3278,3 +3278,57 @@ html {
     font-size: 0.75rem;
   }
 }
+
+/* Mobile Menu Animations */
+.mobile-menu-enter {
+  animation: slideDown 0.3s ease-out forwards;
+  transform-origin: top;
+  display: block !important;
+}
+
+.mobile-menu-exit {
+  animation: slideUp 0.3s ease-out forwards;
+  transform-origin: top;
+  display: block !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0) translateY(-20px);
+  }
+}
+
+/* Hamburger icon animation */
+.hamburger-line {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger-open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}

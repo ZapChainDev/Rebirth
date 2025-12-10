@@ -103,7 +103,9 @@ export default function Home() {
                 REBIRTH
               </Link>
             </div>
-            <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-4 lg:gap-6">
               <a
                 href="https://x.com/RebirthNewHope"
                 target="_blank"
@@ -114,26 +116,135 @@ export default function Home() {
                 𝕏
               </a>
               <Link
-                href="/thesis"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+                href="/"
+                className="historic-nav-link text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
               >
-                <span className="hidden sm:inline">⚜ </span>Thesis
+                Home
               </Link>
               <Link
                 href="/global"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
               >
-                <span className="hidden sm:inline">🌍 </span>Global
+                🌍 Global
+              </Link>
+              <Link
+                href="/thesis"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+              >
+                ⚜ Thesis
               </Link>
               <a
                 href="#about"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
               >
                 Chronicle
               </a>
               <a
                 href="#acquire"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+              >
+                Acquire
+              </a>
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="md:hidden flex items-center gap-3">
+              <a
+                href="https://x.com/RebirthNewHope"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-x-link text-xl"
+                title="Follow us on X"
+              >
+                𝕏
+              </a>
+              <button
+                onClick={(e) => {
+                  const button = e.currentTarget;
+                  const menu = document.getElementById("mobile-menu");
+                  if (menu) {
+                    button.classList.toggle("hamburger-open");
+                    if (menu.classList.contains("hidden")) {
+                      menu.classList.remove("hidden");
+                      menu.classList.remove("mobile-menu-exit");
+                      menu.classList.add("mobile-menu-enter");
+                    } else {
+                      menu.classList.remove("mobile-menu-enter");
+                      menu.classList.add("mobile-menu-exit");
+                      setTimeout(() => {
+                        menu.classList.add("hidden");
+                      }, 300);
+                    }
+                  }
+                }}
+                className="text-white p-2 hover:bg-white/10 rounded transition-all duration-300"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    className="hamburger-line"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16"
+                  />
+                  <path
+                    className="hamburger-line"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 12h16"
+                  />
+                  <path
+                    className="hamburger-line"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Dropdown */}
+          <div
+            id="mobile-menu"
+            className="hidden md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50 overflow-hidden relative z-50"
+          >
+            <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+              <Link
+                href="/"
+                className="historic-nav-link text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+              >
+                Home
+              </Link>
+              <Link
+                href="/global"
+                className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+              >
+                🌍 Global
+              </Link>
+              <Link
+                href="/thesis"
+                className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+              >
+                ⚜ Thesis
+              </Link>
+              <a
+                href="#about"
+                className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
+              >
+                Chronicle
+              </a>
+              <a
+                href="#acquire"
+                className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
               >
                 Acquire
               </a>
