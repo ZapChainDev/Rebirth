@@ -2851,3 +2851,415 @@ html {
     padding: 1.5rem 1rem;
   }
 }
+
+/* ========================================
+   REBIRTH GLOBAL PAGE STYLES
+   ======================================== */
+
+/* Globe Container */
+.globe-container {
+  background: linear-gradient(135deg, #f4e9d8 0%, #e8dcc5 50%, #f0e4d0 100%);
+  border: 4px solid #8b6f47;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.globe-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 111, 71, 0.03) 2px,
+    rgba(139, 111, 71, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.globe-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.globe-ornament {
+  font-size: 3rem;
+  filter: grayscale(0.2) sepia(0.4);
+}
+
+.globe-title {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Globe Wrapper */
+.globe-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  perspective: 1000px;
+  z-index: 1;
+}
+
+.globe-sphere {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(100, 180, 255, 0.3) 0%,
+    rgba(50, 120, 200, 0.5) 50%,
+    rgba(20, 60, 120, 0.7) 100%
+  );
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(100, 180, 255, 0.3), 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.globe-rotation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateGlobe 60s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotateGlobe {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Globe Grid Lines */
+.globe-grid {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 10%,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(255, 255, 255, 0.1) 11%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10%,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(255, 255, 255, 0.1) 11%
+    );
+  opacity: 0.4;
+}
+
+/* Flag Markers */
+.flag-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: float 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.flag-marker:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+.flag-marker:nth-child(even) {
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+.flag-pin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.flag-pin:hover {
+  transform: scale(1.2);
+}
+
+.flag-pin::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, #8b6f47, transparent);
+}
+
+.flag-emoji {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  margin-bottom: 0.5rem;
+}
+
+.flag-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8b6f47;
+  background: rgba(244, 233, 216, 0.95);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.globe-footer {
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.globe-caption {
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+
+/* 3D Globe Styles */
+.globe-container-3d {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 1rem 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.globe-wrapper-3d {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globe-wrapper-3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 3D Flag Markers */
+.flag-marker-3d {
+  position: relative;
+  pointer-events: none;
+}
+
+.flag-pin-3d {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.flag-emoji-3d {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.flag-pin-3d:hover .flag-emoji-3d {
+  transform: scale(1.2);
+}
+
+.flag-label-3d {
+  font-family: "Cinzel", serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #8b6f47;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 10px rgba(139, 111, 71, 0.5);
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Global Stats Cards */
+.global-stat-card {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.global-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.stat-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: none;
+}
+
+.stat-number {
+  font-family: "Cinzel", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  color: #cccccc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive Globe */
+@media (max-width: 768px) {
+  .globe-wrapper {
+    height: 400px;
+    max-width: 400px;
+  }
+
+  .globe-wrapper-3d {
+    max-width: 400px;
+  }
+
+  .globe-title {
+    font-size: 1.5rem;
+  }
+
+  .globe-header {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .globe-ornament {
+    font-size: 2rem;
+  }
+
+  .flag-emoji {
+    font-size: 1.75rem;
+  }
+
+  .flag-emoji-3d {
+    font-size: 1.5rem;
+  }
+
+  .flag-label {
+    font-size: 0.625rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .flag-label-3d {
+    font-size: 0.55rem;
+    padding: 1px 4px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+  }
+
+  .globe-caption {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .globe-wrapper {
+    height: 300px;
+    max-width: 300px;
+  }
+
+  .globe-wrapper-3d {
+    max-width: 300px;
+  }
+
+  .globe-title {
+    font-size: 1.25rem;
+  }
+
+  .globe-header {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .globe-ornament {
+    font-size: 1.5rem;
+  }
+
+  .globe-caption {
+    font-size: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+}

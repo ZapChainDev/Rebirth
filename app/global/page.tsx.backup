@@ -1,0 +1,522 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import * as THREE from "three";
+
+const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
+
+export default function RebirthGlobal() {
+  const globeRef = useRef<any>(null);
+  const [countries, setCountries] = useState({ features: [] });
+  const [markers, setMarkers] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Load country data
+    fetch(
+      "https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson"
+    )
+      .then((res) => res.json())
+      .then(setCountries);
+
+    // Create hex markers for major countries showing Rebirth global presence
+    const countryMarkers = [
+      // Americas
+      { lat: 37.09, lng: -95.71, name: "🇺🇸 United States", size: 0.8 },
+      { lat: 56.13, lng: -106.35, name: "🇨🇦 Canada", size: 0.6 },
+      { lat: 23.63, lng: -102.55, name: "🇲🇽 Mexico", size: 0.5 },
+      { lat: -14.24, lng: -51.93, name: "🇧🇷 Brazil", size: 0.7 },
+      { lat: -38.42, lng: -63.62, name: "🇦🇷 Argentina", size: 0.5 },
+      { lat: -35.68, lng: -71.54, name: "🇨🇱 Chile", size: 0.4 },
+      { lat: 4.57, lng: -74.3, name: "🇨🇴 Colombia", size: 0.4 },
+      // Europe
+      { lat: 55.38, lng: -3.44, name: "🇬🇧 United Kingdom", size: 0.6 },
+      { lat: 51.17, lng: 10.45, name: "🇩🇪 Germany", size: 0.6 },
+      { lat: 46.23, lng: 2.21, name: "🇫🇷 France", size: 0.6 },
+      { lat: 41.87, lng: 12.57, name: "🇮🇹 Italy", size: 0.5 },
+      { lat: 40.46, lng: -3.75, name: "🇪🇸 Spain", size: 0.5 },
+      { lat: 52.13, lng: 5.29, name: "🇳🇱 Netherlands", size: 0.4 },
+      { lat: 60.13, lng: 18.64, name: "🇸🇪 Sweden", size: 0.4 },
+      { lat: 52.23, lng: 21.01, name: "🇵🇱 Poland", size: 0.4 },
+      { lat: 61.52, lng: 105.32, name: "🇷🇺 Russia", size: 0.8 },
+      { lat: 39.93, lng: 32.85, name: "🇹🇷 Turkey", size: 0.5 },
+      // Asia
+      { lat: 35.86, lng: 104.2, name: "🇨🇳 China", size: 0.8 },
+      { lat: 20.59, lng: 78.96, name: "🇮🇳 India", size: 0.8 },
+      { lat: 36.2, lng: 138.25, name: "🇯🇵 Japan", size: 0.6 },
+      { lat: 35.91, lng: 127.77, name: "🇰🇷 South Korea", size: 0.5 },
+      { lat: -0.79, lng: 113.92, name: "🇮🇩 Indonesia", size: 0.6 },
+      { lat: 15.87, lng: 100.99, name: "🇹🇭 Thailand", size: 0.5 },
+      { lat: 12.88, lng: 121.77, name: "🇵🇭 Philippines", size: 0.5 },
+      { lat: 14.06, lng: 108.28, name: "🇻🇳 Vietnam", size: 0.5 },
+      { lat: 4.21, lng: 101.98, name: "🇲🇾 Malaysia", size: 0.4 },
+      { lat: 1.35, lng: 103.82, name: "🇸🇬 Singapore", size: 0.3 },
+      { lat: 23.42, lng: 53.85, name: "🇦🇪 UAE", size: 0.4 },
+      { lat: 23.89, lng: 45.08, name: "🇸🇦 Saudi Arabia", size: 0.5 },
+      { lat: 31.05, lng: 34.85, name: "🇮🇱 Israel", size: 0.3 },
+      { lat: 30.38, lng: 69.35, name: "🇵🇰 Pakistan", size: 0.5 },
+      { lat: 23.81, lng: 90.41, name: "🇧🇩 Bangladesh", size: 0.4 },
+      // Africa
+      { lat: 26.82, lng: 30.8, name: "🇪🇬 Egypt", size: 0.5 },
+      { lat: 9.08, lng: 8.68, name: "🇳🇬 Nigeria", size: 0.6 },
+      { lat: -30.56, lng: 22.94, name: "🇿🇦 South Africa", size: 0.5 },
+      { lat: -1.29, lng: 36.82, name: "🇰🇪 Kenya", size: 0.4 },
+      { lat: 31.79, lng: -7.09, name: "🇲🇦 Morocco", size: 0.4 },
+      { lat: 9.15, lng: 40.49, name: "🇪🇹 Ethiopia", size: 0.4 },
+      { lat: 7.95, lng: -1.03, name: "🇬🇭 Ghana", size: 0.3 },
+      // Oceania
+      { lat: -25.27, lng: 133.78, name: "🇦🇺 Australia", size: 0.7 },
+      { lat: -40.9, lng: 174.89, name: "🇳🇿 New Zealand", size: 0.4 },
+      { lat: -17.68, lng: 168.42, name: "🇫🇯 Fiji", size: 0.2 },
+    ];
+
+    setMarkers(countryMarkers);
+
+    // Scroll animation for sections
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll(".scroll-animate");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black opacity-50"></div>
+
+      {/* Navigation Header */}
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-black/40 backdrop-blur-md border-b border-gray-800/50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="text-lg sm:text-xl md:text-2xl font-black historic-title-nav cursor-pointer hover:opacity-80 transition-opacity duration-300"
+            >
+              REBIRTH
+            </Link>
+          </div>
+          <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+            <Link
+              href="/"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+            >
+              Home
+            </Link>
+            <Link
+              href="/thesis"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+            >
+              Thesis
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-4">
+        <div className="max-w-7xl mx-auto space-y-20">
+          {/* Hero Title */}
+          <div className="text-center space-y-6 scroll-animate opacity-0">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter historic-title-hero fire-text">
+              REBIRTH GLOBAL
+            </h1>
+            <p className="text-xl md:text-2xl font-light tracking-wide text-gray-300 uppercase">
+              A Worldwide Movement
+            </p>
+            <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto italic">
+              From every corner of the earth, we rise together
+            </p>
+          </div>
+
+          {/* 3D Globe Container */}
+          <div className="max-w-6xl mx-auto scroll-animate opacity-0">
+            <div className="globe-container-3d">
+              <div className="globe-header">
+                <span className="globe-ornament">🌍</span>
+                <h2 className="globe-title">The Global Rebirth</h2>
+                <span className="globe-ornament">🌎</span>
+              </div>
+
+              <div className="globe-wrapper-3d">
+                <Globe
+                  ref={globeRef}
+                  globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+                  bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                  backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+                  hexBinPointsData={markers}
+                  hexBinPointLat={(d) => d.lat}
+                  hexBinPointLng={(d) => d.lng}
+                  hexBinPointWeight={(d) => d.size}
+                  hexAltitude={(d) => d.sumWeight * 0.015}
+                  hexBinResolution={4}
+                  hexTopColor={() => "#ffaa00"}
+                  hexSideColor={() => "#ff8800"}
+                  hexLabel={(d) => {
+                    const points = d.points as any[];
+                    return points.map((p) => p.name).join("<br/>");
+                  }}
+                  polygonsData={countries.features}
+                  polygonCapColor={() => "rgba(200, 200, 200, 0.2)"}
+                  polygonSideColor={() => "rgba(100, 100, 100, 0.05)"}
+                  polygonStrokeColor={() => "#444"}
+                  polygonAltitude={0.001}
+                  atmosphereColor="rgba(100, 180, 255, 0.7)"
+                  atmosphereAltitude={0.15}
+                  width={700}
+                  height={700}
+                  enablePointerInteraction={true}
+                />
+              </div>
+
+              <div className="globe-footer">
+                <p className="globe-caption">
+                  🌐 Join the Global Movement • Rebirth is Worldwide 🌐
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto scroll-animate opacity-0">
+            <div className="global-stat-card">
+              <div className="stat-icon">🌍</div>
+              <div className="stat-number">195+</div>
+              <div className="stat-label">Countries Represented</div>
+            </div>
+
+            <div className="global-stat-card">
+              <div className="stat-icon">👥</div>
+              <div className="stat-number">Global</div>
+              <div className="stat-label">Community United</div>
+            </div>
+
+            <div className="global-stat-card">
+              <div className="stat-icon">🚀</div>
+              <div className="stat-number">24/7</div>
+              <div className="stat-label">Worldwide Trading</div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center scroll-animate opacity-0">
+            <Link href="/" className="historic-button historic-button-green">
+              <span className="historic-button-ornament">✦</span>
+              <span className="historic-button-text">JOIN THE MOVEMENT</span>
+              <span className="historic-button-ornament">✦</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+      { lat: 42.73, lng: 25.49, name: "Bulgaria", flag: "🇧🇬" },
+      { lat: 45.94, lng: 24.97, name: "Romania", flag: "🇷🇴" },
+      { lat: 47.41, lng: 28.37, name: "Moldova", flag: "🇲🇩" },
+      { lat: 48.38, lng: 31.17, name: "Ukraine", flag: "🇺🇦" },
+      { lat: 53.71, lng: 27.95, name: "Belarus", flag: "🇧🇾" },
+      { lat: 61.52, lng: 105.32, name: "Russia", flag: "🇷🇺" },
+      { lat: 49.82, lng: 15.47, name: "Czech Republic", flag: "🇨🇿" },
+      { lat: 47.16, lng: 19.5, name: "Hungary", flag: "🇭🇺" },
+      { lat: 42.73, lng: 19.37, name: "Montenegro", flag: "🇲🇪" },
+      { lat: 43.86, lng: 18.41, name: "Bosnia", flag: "🇧🇦" },
+      { lat: 45.1, lng: 15.2, name: "Croatia", flag: "🇭🇷" },
+      { lat: 46.15, lng: 14.99, name: "Slovenia", flag: "🇸🇮" },
+      { lat: 42.0, lng: 21.43, name: "Kosovo", flag: "🇽🇰" },
+      { lat: 41.15, lng: 20.17, name: "Albania", flag: "🇦🇱" },
+      { lat: 39.07, lng: 21.82, name: "Greece", flag: "🇬🇷" },
+      { lat: 41.61, lng: 43.36, name: "Georgia", flag: "🇬🇪" },
+      { lat: 40.14, lng: 47.58, name: "Azerbaijan", flag: "🇦🇿" },
+      { lat: 40.07, lng: 45.04, name: "Armenia", flag: "🇦🇲" },
+      { lat: 39.93, lng: 32.85, name: "Turkey", flag: "🇹🇷" },
+      { lat: 35.13, lng: 33.43, name: "Cyprus", flag: "🇨🇾" },
+      { lat: 64.96, lng: -19.02, name: "Iceland", flag: "🇮🇸" },
+      { lat: 53.41, lng: -8.24, name: "Ireland", flag: "🇮🇪" },
+      { lat: 46.94, lng: 7.45, name: "Liechtenstein", flag: "🇱🇮" },
+      { lat: 49.82, lng: 6.13, name: "Luxembourg", flag: "🇱🇺" },
+      { lat: 43.94, lng: 12.46, name: "San Marino", flag: "🇸🇲" },
+      { lat: 43.73, lng: 7.42, name: "Monaco", flag: "🇲🇨" },
+      { lat: 42.51, lng: 1.52, name: "Andorra", flag: "🇦🇩" },
+      { lat: 41.9, lng: 12.45, name: "Vatican", flag: "🇻🇦" },
+      { lat: 35.93, lng: 14.38, name: "Malta", flag: "🇲🇹" },
+
+      // Africa
+      { lat: 26.82, lng: 30.8, name: "Egypt", flag: "🇪🇬" },
+      { lat: 9.08, lng: 8.68, name: "Nigeria", flag: "🇳🇬" },
+      { lat: -30.56, lng: 22.94, name: "South Africa", flag: "🇿🇦" },
+      { lat: 7.95, lng: -1.03, name: "Ghana", flag: "🇬🇭" },
+      { lat: -1.29, lng: 36.82, name: "Kenya", flag: "🇰🇪" },
+      { lat: -6.37, lng: 34.89, name: "Tanzania", flag: "🇹🇿" },
+      { lat: 0.02, lng: 37.91, name: "Uganda", flag: "🇺🇬" },
+      { lat: 12.86, lng: 30.22, name: "Sudan", flag: "🇸🇩" },
+      { lat: 15.55, lng: 32.53, name: "South Sudan", flag: "🇸🇸" },
+      { lat: 9.15, lng: 40.49, name: "Ethiopia", flag: "🇪🇹" },
+      { lat: 9.54, lng: 44.06, name: "Somalia", flag: "🇸🇴" },
+      { lat: -19.02, lng: 29.15, name: "Zimbabwe", flag: "🇿🇼" },
+      { lat: -13.13, lng: 27.85, name: "Zambia", flag: "🇿🇲" },
+      { lat: -22.33, lng: 24.68, name: "Botswana", flag: "🇧🇼" },
+      { lat: -25.97, lng: 32.57, name: "Mozambique", flag: "🇲🇿" },
+      { lat: -20.16, lng: 57.5, name: "Mauritius", flag: "🇲🇺" },
+      { lat: -4.04, lng: 21.76, name: "Madagascar", flag: "🇲🇬" },
+      { lat: 31.79, lng: -7.09, name: "Morocco", flag: "🇲🇦" },
+      { lat: 28.03, lng: 1.66, name: "Algeria", flag: "🇩🇿" },
+      { lat: 33.89, lng: 9.54, name: "Tunisia", flag: "🇹🇳" },
+      { lat: 26.34, lng: 17.23, name: "Libya", flag: "🇱🇾" },
+      { lat: 12.26, lng: -1.56, name: "Burkina Faso", flag: "🇧🇫" },
+      { lat: 17.61, lng: -8.0, name: "Mali", flag: "🇲🇱" },
+      { lat: 12.35, lng: -7.99, name: "Guinea", flag: "🇬🇳" },
+      { lat: 14.5, lng: -14.45, name: "Senegal", flag: "🇸🇳" },
+      { lat: 6.43, lng: -9.43, name: "Liberia", flag: "🇱🇷" },
+      { lat: 7.37, lng: -5.55, name: "Ivory Coast", flag: "🇨🇮" },
+      { lat: 9.64, lng: 2.61, name: "Benin", flag: "🇧🇯" },
+      { lat: 6.13, lng: 1.22, name: "Togo", flag: "🇹🇬" },
+      { lat: 8.62, lng: 0.82, name: "Ghana", flag: "🇬🇭" },
+      { lat: 7.54, lng: 5.08, name: "Cameroon", flag: "🇨🇲" },
+      { lat: 15.45, lng: 18.73, name: "Chad", flag: "🇹🇩" },
+      { lat: -0.23, lng: 15.83, name: "Congo", flag: "🇨🇬" },
+      { lat: -4.04, lng: 21.76, name: "DR Congo", flag: "🇨🇩" },
+      { lat: 1.37, lng: 32.29, name: "Uganda", flag: "🇺🇬" },
+      { lat: -1.94, lng: 29.87, name: "Rwanda", flag: "🇷🇼" },
+      { lat: -3.37, lng: 29.92, name: "Burundi", flag: "🇧🇮" },
+      { lat: -13.25, lng: 34.3, name: "Malawi", flag: "🇲🇼" },
+      { lat: -18.77, lng: 46.87, name: "Madagascar", flag: "🇲🇬" },
+      { lat: 0.39, lng: 9.45, name: "Gabon", flag: "🇬🇦" },
+      { lat: 3.85, lng: 11.52, name: "Equatorial Guinea", flag: "🇬🇶" },
+      { lat: -8.84, lng: 13.23, name: "Angola", flag: "🇦🇴" },
+      { lat: -22.56, lng: 17.08, name: "Namibia", flag: "🇳🇦" },
+      { lat: -29.61, lng: 28.23, name: "Lesotho", flag: "🇱🇸" },
+      { lat: -26.52, lng: 31.47, name: "Eswatini", flag: "🇸🇿" },
+
+      // Asia
+      { lat: 35.86, lng: 104.2, name: "China", flag: "🇨🇳" },
+      { lat: 20.59, lng: 78.96, name: "India", flag: "🇮🇳" },
+      { lat: 36.2, lng: 138.25, name: "Japan", flag: "🇯🇵" },
+      { lat: 35.91, lng: 127.77, name: "South Korea", flag: "🇰🇷" },
+      { lat: 40.34, lng: 127.51, name: "North Korea", flag: "🇰🇵" },
+      { lat: -0.79, lng: 113.92, name: "Indonesia", flag: "🇮🇩" },
+      { lat: 15.87, lng: 100.99, name: "Thailand", flag: "🇹🇭" },
+      { lat: 12.88, lng: 121.77, name: "Philippines", flag: "🇵🇭" },
+      { lat: 21.91, lng: 95.96, name: "Myanmar", flag: "🇲🇲" },
+      { lat: 14.06, lng: 108.28, name: "Vietnam", flag: "🇻🇳" },
+      { lat: 4.21, lng: 101.98, name: "Malaysia", flag: "🇲🇾" },
+      { lat: 1.35, lng: 103.82, name: "Singapore", flag: "🇸🇬" },
+      { lat: 19.82, lng: 102.5, name: "Laos", flag: "🇱🇦" },
+      { lat: 12.57, lng: 104.99, name: "Cambodia", flag: "🇰🇭" },
+      { lat: 4.54, lng: 114.73, name: "Brunei", flag: "🇧🇳" },
+      { lat: -8.87, lng: 125.73, name: "East Timor", flag: "🇹🇱" },
+      { lat: 33.22, lng: 43.68, name: "Iraq", flag: "🇮🇶" },
+      { lat: 32.43, lng: 53.69, name: "Iran", flag: "🇮🇷" },
+      { lat: 15.55, lng: 48.52, name: "Yemen", flag: "🇾🇪" },
+      { lat: 23.89, lng: 45.08, name: "Saudi Arabia", flag: "🇸🇦" },
+      { lat: 25.35, lng: 51.18, name: "Qatar", flag: "🇶🇦" },
+      { lat: 25.93, lng: 50.64, name: "Bahrain", flag: "🇧🇭" },
+      { lat: 29.31, lng: 47.48, name: "Kuwait", flag: "🇰🇼" },
+      { lat: 23.42, lng: 53.85, name: "UAE", flag: "🇦🇪" },
+      { lat: 23.42, lng: 58.29, name: "Oman", flag: "🇴🇲" },
+      { lat: 33.85, lng: 35.86, name: "Lebanon", flag: "🇱🇧" },
+      { lat: 34.8, lng: 38.99, name: "Syria", flag: "🇸🇾" },
+      { lat: 31.05, lng: 34.85, name: "Israel", flag: "🇮🇱" },
+      { lat: 31.95, lng: 35.23, name: "Palestine", flag: "🇵🇸" },
+      { lat: 30.59, lng: 36.24, name: "Jordan", flag: "🇯🇴" },
+      { lat: 41.38, lng: 64.59, name: "Uzbekistan", flag: "🇺🇿" },
+      { lat: 48.02, lng: 66.92, name: "Kazakhstan", flag: "🇰🇿" },
+      { lat: 38.86, lng: 71.28, name: "Kyrgyzstan", flag: "🇰🇬" },
+      { lat: 38.97, lng: 59.56, name: "Turkmenistan", flag: "🇹🇲" },
+      { lat: 38.86, lng: 71.28, name: "Tajikistan", flag: "🇹🇯" },
+      { lat: 41.2, lng: 74.77, name: "Kyrgyzstan", flag: "🇰🇬" },
+      { lat: 33.94, lng: 67.71, name: "Afghanistan", flag: "🇦🇫" },
+      { lat: 30.38, lng: 69.35, name: "Pakistan", flag: "🇵🇰" },
+      { lat: 23.81, lng: 90.41, name: "Bangladesh", flag: "🇧🇩" },
+      { lat: 7.87, lng: 80.77, name: "Sri Lanka", flag: "🇱🇰" },
+      { lat: 27.51, lng: 90.43, name: "Bhutan", flag: "🇧🇹" },
+      { lat: 28.39, lng: 84.12, name: "Nepal", flag: "🇳🇵" },
+      { lat: 4.17, lng: 73.51, name: "Maldives", flag: "🇲🇻" },
+      { lat: 47.41, lng: 94.0, name: "Mongolia", flag: "🇲🇳" },
+      { lat: 35.9, lng: 128.0, name: "Taiwan", flag: "🇹🇼" },
+      { lat: 22.4, lng: 114.11, name: "Hong Kong", flag: "🇭🇰" },
+      { lat: 22.2, lng: 113.54, name: "Macau", flag: "🇲🇴" },
+
+      // Oceania
+      { lat: -25.27, lng: 133.78, name: "Australia", flag: "🇦🇺" },
+      { lat: -40.9, lng: 174.89, name: "New Zealand", flag: "🇳🇿" },
+      { lat: -17.68, lng: 168.42, name: "Fiji", flag: "🇫🇯" },
+      { lat: -9.19, lng: 159.95, name: "Papua New Guinea", flag: "🇵🇬" },
+      { lat: -21.18, lng: -159.78, name: "Cook Islands", flag: "🇨🇰" },
+      { lat: -13.76, lng: -172.1, name: "Samoa", flag: "🇼🇸" },
+      { lat: -21.13, lng: -175.2, name: "Tonga", flag: "🇹🇴" },
+      { lat: -17.75, lng: -149.41, name: "Tahiti", flag: "🇵🇫" },
+      { lat: 7.51, lng: 134.58, name: "Palau", flag: "🇵🇼" },
+      { lat: 6.88, lng: 158.21, name: "Micronesia", flag: "🇫🇲" },
+      { lat: 0.33, lng: 166.92, name: "Nauru", flag: "🇳🇷" },
+      { lat: 1.35, lng: 172.98, name: "Kiribati", flag: "🇰🇮" },
+      { lat: -8.52, lng: 179.2, name: "Tuvalu", flag: "🇹🇻" },
+      { lat: 9.54, lng: 167.99, name: "Marshall Islands", flag: "🇲🇭" },
+      { lat: -20.21, lng: 169.88, name: "Vanuatu", flag: "🇻🇺" },
+      { lat: -20.91, lng: 165.62, name: "New Caledonia", flag: "🇳🇨" },
+      { lat: -9.43, lng: 147.18, name: "Solomon Islands", flag: "🇸🇧" },
+    ];
+
+    setMarkers(countryMarkers);
+
+    // Scroll animation for sections
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll(".scroll-animate");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.05]"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black opacity-50"></div>
+
+      {/* Navigation Header */}
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-black/40 backdrop-blur-md border-b border-gray-800/50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="text-lg sm:text-xl md:text-2xl font-black historic-title-nav cursor-pointer hover:opacity-80 transition-opacity duration-300"
+            >
+              REBIRTH
+            </Link>
+          </div>
+          <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+            <Link
+              href="/"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+            >
+              Home
+            </Link>
+            <Link
+              href="/thesis"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+            >
+              Thesis
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
+        <div className="max-w-7xl w-full space-y-16">
+          {/* Title */}
+          <div className="text-center space-y-6 animate-slideDown pt-20">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter historic-title-hero fire-text">
+              REBIRTH GLOBAL
+            </h1>
+            <p className="text-xl md:text-2xl font-light tracking-wide text-gray-300 uppercase">
+              A Worldwide Movement
+            </p>
+            <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto italic">
+              From every corner of the earth, we rise together
+            </p>
+          </div>
+
+          {/* 3D Globe Container */}
+          <div className="max-w-6xl mx-auto scroll-animate opacity-0">
+            <div className="globe-container-3d">
+              <div className="globe-header">
+                <span className="globe-ornament">🌍</span>
+                <h2 className="globe-title">The Global Rebirth</h2>
+                <span className="globe-ornament">🌎</span>
+              </div>
+
+              <div className="globe-wrapper-3d">
+                <Globe
+                  ref={globeRef}
+                  globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+                  bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                  backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+                  hexPolygonsData={markers}
+                  hexPolygonResolution={3}
+                  hexPolygonMargin={0.3}
+                  hexPolygonUseDots={false}
+                  hexPolygonColor={() => "#ffaa00"}
+                  hexPolygonAltitude={(d) => d.size * 0.01}
+                  hexPolygonLabel={(d) => d.name}
+                  polygonsData={countries.features}
+                  polygonCapColor={() => "rgba(200, 200, 200, 0.2)"}
+                  polygonSideColor={() => "rgba(100, 100, 100, 0.05)"}
+                  polygonStrokeColor={() => "#444"}
+                  polygonAltitude={0.001}
+                  atmosphereColor="rgba(100, 180, 255, 0.7)"
+                  atmosphereAltitude={0.15}
+                  width={700}
+                  height={700}
+                  enablePointerInteraction={true}
+                />
+              </div>
+
+              <div className="globe-footer">
+                <p className="globe-caption">
+                  🌐 Join the Global Movement • Rebirth is Worldwide 🌐
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto scroll-animate opacity-0">
+            <div className="global-stat-card">
+              <div className="stat-icon">🌍</div>
+              <div className="stat-number">195+</div>
+              <div className="stat-label">Countries Represented</div>
+            </div>
+
+            <div className="global-stat-card">
+              <div className="stat-icon">👥</div>
+              <div className="stat-number">Global</div>
+              <div className="stat-label">Community United</div>
+            </div>
+
+            <div className="global-stat-card">
+              <div className="stat-icon">🚀</div>
+              <div className="stat-number">24/7</div>
+              <div className="stat-label">Worldwide Trading</div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center scroll-animate opacity-0">
+            <Link href="/" className="historic-button historic-button-green">
+              <span className="historic-button-ornament">✦</span>
+              <span className="historic-button-text">JOIN THE MOVEMENT</span>
+              <span className="historic-button-ornament">✦</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

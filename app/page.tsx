@@ -119,6 +119,12 @@ export default function Home() {
               >
                 <span className="hidden sm:inline">⚜ </span>Thesis
               </Link>
+              <Link
+                href="/global"
+                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
+              >
+                <span className="hidden sm:inline">🌍 </span>Global
+              </Link>
               <a
                 href="#about"
                 className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-xs sm:text-sm"
