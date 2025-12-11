@@ -104,6 +104,12 @@ export default function WhalesPage() {
             >
               🐋 Whales
             </Link>
+            <Link
+              href="/memes"
+              className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
+            >
+              😂 Memes
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -179,6 +185,12 @@ export default function WhalesPage() {
               className="block text-white transition-colors font-semibold tracking-wider uppercase text-center py-2"
             >
               🐋 Whales
+            </Link>
+            <Link
+              href="/memes"
+              className="block text-gray-300 hover:text-white transition-colors font-semibold tracking-wider uppercase text-center py-2"
+            >
+              😂 Memes
             </Link>
           </div>
         </div>

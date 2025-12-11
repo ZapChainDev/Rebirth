@@ -319,6 +319,12 @@ export default function RebirthGlobal() {
             >
               🐋 Whales
             </Link>
+            <Link
+              href="/memes"
+              className="block text-gray-300 hover:text-white transition-colors font-semibold tracking-wider uppercase text-center py-2"
+            >
+              😂 Memes
+            </Link>
           </div>
         </div>
       </nav>
