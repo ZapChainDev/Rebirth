@@ -655,6 +655,9 @@ export default function Home() {
                       <code className="wallet-address">
                         CeVyfo1uLgt6dLDyXZuUFL7ZkgsUsWA5FENGf2mdSGRb
                       </code>
+                      <code className="wallet-address">
+                        8cxFnVqa7sUSEXxeRzqDSbXYfEZSGFeWnfAjAzkaRcQE
+                      </code>
                     </div>
                     <div className="member-divider">✦</div>
                   </div>

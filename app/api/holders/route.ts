@@ -68,7 +68,7 @@ export async function GET() {
       },
       {
         rank: 5,
-        address: "CmBh5b...VYWoL6",
+        address: "8cxFnVqa7sUSEXxeRzqDSbXYfEZSGFeWnfAjAzkaRcQE",
         balance: "30,518,665",
         percentage: "3.05",
       },
