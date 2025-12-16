@@ -96,6 +96,78 @@ body {
   filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.6));
 }
 
+/* Christmas Text Effect */
+.christmas-text {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffe6e6 10%,
+    #ff4444 25%,
+    #cc0000 35%,
+    #ffffff 50%,
+    #e6ffe6 65%,
+    #44ff44 75%,
+    #00cc00 90%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 100% 400%;
+  animation: christmasGlow 4s ease-in-out infinite,
+    christmasShimmer 0.2s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.5),
+    0 0 60px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 0, 0, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.3),
+    6px 6px 0 rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes christmasGlow {
+  0%,
+  100% {
+    background-position: 0% 0%;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.6)) brightness(1);
+  }
+  33% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)) brightness(1.1);
+  }
+  66% {
+    background-position: 0% 100%;
+    filter: drop-shadow(0 0 50px rgba(0, 255, 0, 0.7)) brightness(1.2);
+  }
+}
+
+@keyframes christmasShimmer {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.97;
+  }
+}
+
+/* Christmas Glow Effect for Divider */
+.christmas-glow {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5),
+    0 0 60px rgba(255, 255, 255, 0.3);
+  animation: christmasPulse 3s ease-in-out infinite;
+}
+
+@keyframes christmasPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5),
+      0 0 60px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7), 0 0 60px rgba(0, 255, 0, 0.7),
+      0 0 90px rgba(255, 255, 255, 0.5);
+  }
+}
+
 @keyframes fireGlow {
   0%,
   100% {
@@ -1040,6 +1112,772 @@ html {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
   border-color: #a58759;
+}
+
+/* Christmas Scroll Cards */
+.christmas-scroll {
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #2d0000 25%,
+    #1a1a1a 50%,
+    #002d00 75%,
+    #1a1a1a 100%
+  );
+  border: 3px solid #ffaa00;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 0, 0, 0.3),
+    0 0 40px rgba(0, 255, 0, 0.2);
+  animation: christmasCardGlow 3s ease-in-out infinite;
+}
+
+.christmas-scroll:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 0, 0, 0.5),
+    0 0 50px rgba(0, 255, 0, 0.4);
+  border-color: #ffd700;
+}
+
+@keyframes christmasCardGlow {
+  0%,
+  100% {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 0, 0, 0.3),
+      0 0 40px rgba(0, 255, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(0, 255, 0, 0.4),
+      0 0 50px rgba(255, 0, 0, 0.3);
+  }
+}
+
+/* Modern Christmas Cards - Redesigned */
+.modern-christmas-card {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(20, 10, 10, 0.95) 0%,
+    rgba(10, 25, 15, 0.95) 50%,
+    rgba(20, 10, 10, 0.95) 100%
+  );
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 20px rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.modern-christmas-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+  animation: cardPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.modern-christmas-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  border-color: #ffd700;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 60px rgba(255, 0, 0, 0.2), 0 0 80px rgba(0, 255, 0, 0.2);
+}
+
+@keyframes cardPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* Floating Ornaments */
+.card-floating-ornaments {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-ornament {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.3;
+  animation: floatOrnament 6s ease-in-out infinite;
+}
+
+.ornament-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.ornament-2 {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.ornament-3 {
+  top: 15%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.ornament-4 {
+  bottom: 10%;
+  left: 15%;
+  animation-delay: 3s;
+}
+
+.ornament-5 {
+  top: 20%;
+  left: 12%;
+  animation-delay: 0.5s;
+}
+
+.ornament-6 {
+  bottom: 20%;
+  right: 12%;
+  animation-delay: 2.5s;
+}
+
+@keyframes floatOrnament {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 0.5;
+  }
+}
+
+.modern-christmas-card:hover .floating-ornament {
+  animation-duration: 3s;
+  opacity: 0.6;
+}
+
+/* Card Icon */
+.card-icon-wrapper {
+  position: relative;
+  margin: 0 auto 1.5rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1),
+    rgba(255, 215, 0, 0.05)
+  );
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.modern-christmas-card:hover .card-icon-wrapper {
+  transform: scale(1.15) rotate(10deg);
+  border-color: rgba(255, 215, 0, 0.6);
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.2),
+    rgba(255, 215, 0, 0.1)
+  );
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.modern-christmas-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+/* Card Title */
+.card-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #d4af37;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+}
+
+.modern-christmas-card:hover .card-title {
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.6);
+  letter-spacing: 0.3em;
+}
+
+/* Card Divider */
+.card-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.modern-christmas-card:hover .card-divider {
+  width: 100px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Card Description */
+.card-description {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #a8a8a8;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: color 0.4s ease;
+}
+
+.modern-christmas-card:hover .card-description {
+  color: #d4d4d4;
+}
+
+/* Card Glow Effect */
+.card-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.5),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.modern-christmas-card:hover .card-glow {
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+/* Christmas Countdown Timer */
+.christmas-countdown-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 5, 5, 0.95) 0%,
+    rgba(5, 20, 10, 0.95) 50%,
+    rgba(15, 5, 5, 0.95) 100%
+  );
+  border: 2px solid #d4af37;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 30px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(255, 0, 0, 0.2), 0 0 50px rgba(0, 255, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.christmas-countdown-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+  animation: countdownPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes countdownPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.countdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.countdown-star {
+  font-size: 2rem;
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.countdown-title {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #d4af37;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.4);
+  text-transform: uppercase;
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-box {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 15, 15, 0.9) 0%,
+    rgba(15, 30, 20, 0.9) 100%
+  );
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  min-width: 120px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.countdown-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.countdown-number {
+  font-family: "Cinzel", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.5);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: numberPulse 1s ease-in-out infinite;
+}
+
+@keyframes numberPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.countdown-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #a8a8a8;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-ornament {
+  font-size: 1.5rem;
+  opacity: 0.6;
+  animation: ornamentFloat 3s ease-in-out infinite;
+}
+
+@keyframes ornamentFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 0.8;
+  }
+}
+
+.countdown-separator {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  opacity: 0.7;
+  animation: separatorBlink 2s ease-in-out infinite;
+}
+
+@keyframes separatorBlink {
+  0%,
+  49%,
+  51%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.countdown-message {
+  margin-top: 2rem;
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #b8b8b8;
+  text-align: center;
+  letter-spacing: 0.1em;
+  animation: messageFade 3s ease-in-out infinite;
+}
+
+@keyframes messageFade {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Developer Token Locks Section */
+.token-lock-container {
+  background: linear-gradient(
+    145deg,
+    rgba(10, 5, 5, 0.95) 0%,
+    rgba(5, 15, 10, 0.95) 50%,
+    rgba(10, 5, 5, 0.95) 100%
+  );
+  border: 2px solid #d4af37;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.token-lock-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 0, 0.05) 0%,
+    transparent 70%
+  );
+  animation: lockPulse 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes lockPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.token-lock-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lock-icon {
+  font-size: 2rem;
+  animation: lockShake 3s ease-in-out infinite;
+}
+
+@keyframes lockShake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.token-lock-title {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #d4af37;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.4);
+  text-transform: uppercase;
+}
+
+.token-lock-description {
+  font-family: "Cinzel", serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #b8b8b8;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.token-lock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.token-lock-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 10, 10, 0.9) 0%,
+    rgba(10, 25, 15, 0.9) 100%
+  );
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+}
+
+.token-lock-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.token-lock-card:hover::before {
+  left: 100%;
+}
+
+.token-lock-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 25px rgba(0, 255, 0, 0.3);
+}
+
+.lock-card-badge {
+  display: inline-block;
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.lock-card-icon {
+  font-size: 3rem;
+  margin: 1rem 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.lock-card-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #a8a8a8;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.lock-card-address {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: #00ff00;
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  word-break: break-all;
+}
+
+.lock-card-action {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.token-lock-card:hover .lock-card-action {
+  color: #ffd700;
+  letter-spacing: 0.15em;
+}
+
+.lock-card-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 0, 0.5),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.token-lock-card:hover .lock-card-glow {
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+}
+
+.token-lock-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-badge {
+  font-size: 1.25rem;
+  color: #00ff00;
+  animation: checkPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.footer-text {
+  font-family: "Cinzel", serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #a8a8a8;
+  text-transform: uppercase;
 }
 
 /* Scroll Ornaments */
@@ -3343,4 +4181,44 @@ html {
 
 .hamburger-open .hamburger-line:last-child {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Christmas Snowfall Effect */
+.snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(200, 230, 255, 0.6);
+  animation: snowfall linear infinite;
+  user-select: none;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(25vh) translateX(10px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-10px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(15px) rotate(270deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0) rotate(360deg);
+  }
 }

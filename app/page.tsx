@@ -6,6 +6,64 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [snowflakes, setSnowflakes] = useState<
+    Array<{
+      left: number;
+      animationDelay: number;
+      animationDuration: number;
+      fontSize: number;
+      opacity: number;
+    }>
+  >([]);
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    // Generate snowflake properties on client side only
+    setSnowflakes(
+      Array.from({ length: 50 }, () => ({
+        left: Math.random() * 100,
+        animationDelay: Math.random() * 10,
+        animationDuration: 10 + Math.random() * 10,
+        fontSize: 10 + Math.random() * 10,
+        opacity: Math.random() * 0.8 + 0.2,
+      }))
+    );
+  }, []);
+
+  useEffect(() => {
+    // Christmas countdown timer
+    const calculateCountdown = () => {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const christmas = new Date(currentYear, 11, 25); // December 25
+
+      // If Christmas has passed this year, count to next year
+      if (now > christmas) {
+        christmas.setFullYear(currentYear + 1);
+      }
+
+      const difference = christmas.getTime() - now.getTime();
+
+      if (difference > 0) {
+        setCountdown({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateCountdown();
+    const timer = setInterval(calculateCountdown, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     // Mysterious loading screen with fog effect
@@ -68,12 +126,12 @@ export default function Home() {
 
             {/* Logo/Text with Mystery Reveal */}
             <h1 className="text-6xl md:text-8xl font-black uppercase tracking-wider relative z-10 mystery-text-reveal historic-title">
-              <span className="bg-gradient-to-r from-gray-500 via-white to-gray-500 text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-red-500 via-white via-green-500 to-red-500 text-transparent bg-clip-text">
                 Rebirth
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mt-4 uppercase tracking-widest relative z-10 mystery-subtitle">
-              Rising from the ashes...
+              🎄 A Christmas Miracle... ❄️
             </p>
 
             {/* Mysterious Particles */}
@@ -290,24 +348,81 @@ export default function Home() {
           <div className="smoke smoke-4"></div>
         </div>
 
+        {/* Christmas Snowfall Effect */}
+        <div className="snowfall">
+          {snowflakes.map((flake, i) => (
+            <div
+              key={i}
+              className="snowflake"
+              style={{
+                left: `${flake.left}%`,
+                animationDelay: `${flake.animationDelay}s`,
+                animationDuration: `${flake.animationDuration}s`,
+                fontSize: `${flake.fontSize}px`,
+                opacity: flake.opacity,
+              }}
+            >
+              ❄
+            </div>
+          ))}
+        </div>
+
         {/* Hero Section */}
         <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
           <div className="max-w-7xl w-full space-y-16">
-            {/* Main Title - Dark Rebirth Aesthetic */}
+            {/* Main Title - Christmas Rebirth Aesthetic */}
             <div className="text-center space-y-6 animate-slideDown">
               <div className="inline-block relative">
-                <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-white/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
-                <h1 className="text-7xl md:text-9xl font-black tracking-tighter historic-title-hero fire-text">
+                <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-red-500/20 to-transparent rounded-full blur-2xl animate-pulse"></div>
+                <h1 className="text-7xl md:text-9xl font-black tracking-tighter historic-title-hero christmas-text">
                   REBIRTH
                 </h1>
-                <div className="h-1 w-full bg-gradient-to-r from-transparent via-white to-transparent mt-4 animate-expandWidth"></div>
+                <div className="h-1 w-full bg-gradient-to-r from-transparent via-red-500 via-white via-green-500 to-transparent mt-4 animate-expandWidth christmas-glow"></div>
               </div>
               <h2 className="text-2xl md:text-4xl font-light tracking-[0.3em] text-gray-300 uppercase">
-                And New Hope
+                🎄 A Christmas Miracle 🎄
               </h2>
               <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto italic">
-                Rising from the ashes. A second chance. A new beginning.
+                This holiday season, witness the greatest comeback story. A gift
+                of new beginnings. 🎁
               </p>
+            </div>
+
+            {/* Christmas Countdown Timer */}
+            <div className="christmas-countdown-container scroll-animate opacity-0">
+              <div className="countdown-header">
+                <span className="countdown-star">⭐</span>
+                <h3 className="countdown-title">Time Until Christmas</h3>
+                <span className="countdown-star">⭐</span>
+              </div>
+              <div className="countdown-grid">
+                <div className="countdown-box">
+                  <div className="countdown-number">{countdown.days}</div>
+                  <div className="countdown-label">Days</div>
+                  <div className="countdown-ornament">🎄</div>
+                </div>
+                <div className="countdown-separator">:</div>
+                <div className="countdown-box">
+                  <div className="countdown-number">{countdown.hours}</div>
+                  <div className="countdown-label">Hours</div>
+                  <div className="countdown-ornament">❄️</div>
+                </div>
+                <div className="countdown-separator">:</div>
+                <div className="countdown-box">
+                  <div className="countdown-number">{countdown.minutes}</div>
+                  <div className="countdown-label">Minutes</div>
+                  <div className="countdown-ornament">🎁</div>
+                </div>
+                <div className="countdown-separator">:</div>
+                <div className="countdown-box">
+                  <div className="countdown-number">{countdown.seconds}</div>
+                  <div className="countdown-label">Seconds</div>
+                  <div className="countdown-ornament">✨</div>
+                </div>
+              </div>
+              <div className="countdown-message">
+                The season of miracles approaches... 🌟
+              </div>
             </div>
 
             {/* Hero Banner with Dark Design - Video */}
@@ -329,38 +444,124 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Core Values - Historic Scrolls */}
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto scroll-animate opacity-0">
-              <div className="historic-scroll">
-                <div className="scroll-ornament">❦</div>
-                <div className="scroll-icon">🦅</div>
-                <h3 className="scroll-title">Rise Again</h3>
-                <p className="scroll-text">
-                  From the ashes, we emerge stronger. Every setback is a setup
-                  for a comeback.
+            {/* Core Values - Modern Christmas Cards */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto scroll-animate opacity-0 px-4">
+              {/* Rise Again Card */}
+              <div className="modern-christmas-card group">
+                <div className="card-floating-ornaments">
+                  <div className="floating-ornament ornament-1">❄️</div>
+                  <div className="floating-ornament ornament-2">❄️</div>
+                </div>
+                <div className="card-icon-wrapper">
+                  <div className="card-icon">🎅</div>
+                </div>
+                <h3 className="card-title">RISE AGAIN</h3>
+                <div className="card-divider"></div>
+                <p className="card-description">
+                  Like the North Star guiding the wise men, we rise stronger.
+                  Every winter brings the promise of spring.
                 </p>
-                <div className="scroll-ornament-bottom">❦</div>
+                <div className="card-glow"></div>
               </div>
 
-              <div className="historic-scroll">
-                <div className="scroll-ornament">❦</div>
-                <div className="scroll-icon">🔥</div>
-                <h3 className="scroll-title">Clean Slate</h3>
-                <p className="scroll-text">
-                  A fresh start. No baggage. Just pure potential and unlimited
-                  opportunity.
+              {/* Clean Slate Card */}
+              <div className="modern-christmas-card group">
+                <div className="card-floating-ornaments">
+                  <div className="floating-ornament ornament-3">⭐</div>
+                  <div className="floating-ornament ornament-4">❄️</div>
+                </div>
+                <div className="card-icon-wrapper">
+                  <div className="card-icon">🎁</div>
+                </div>
+                <h3 className="card-title">CLEAN SLATE</h3>
+                <div className="card-divider"></div>
+                <p className="card-description">
+                  A fresh start this holiday season. The gift of redemption.
+                  Pure potential wrapped in Christmas magic.
                 </p>
-                <div className="scroll-ornament-bottom">❦</div>
+                <div className="card-glow"></div>
               </div>
 
-              <div className="historic-scroll">
-                <div className="scroll-ornament">❦</div>
-                <div className="scroll-icon">⚡</div>
-                <h3 className="scroll-title">New Hope</h3>
-                <p className="scroll-text">
-                  Join a movement. Build with believers. Transform together.
+              {/* New Hope Card */}
+              <div className="modern-christmas-card group">
+                <div className="card-floating-ornaments">
+                  <div className="floating-ornament ornament-5">🎄</div>
+                  <div className="floating-ornament ornament-6">✨</div>
+                </div>
+                <div className="card-icon-wrapper">
+                  <div className="card-icon">✨</div>
+                </div>
+                <h3 className="card-title">NEW HOPE</h3>
+                <div className="card-divider"></div>
+                <p className="card-description">
+                  Join our Christmas miracle. Build with believers. Transform
+                  together this season of giving.
                 </p>
-                <div className="scroll-ornament-bottom">❦</div>
+                <div className="card-glow"></div>
+              </div>
+            </div>
+
+            {/* Developer Token Locks - Transparency Section */}
+            <div className="max-w-6xl mx-auto scroll-animate opacity-0 px-4">
+              <div className="token-lock-container">
+                <div className="token-lock-header">
+                  <div className="lock-icon">🔒</div>
+                  <h2 className="token-lock-title">Developer Tokens Locked</h2>
+                  <div className="lock-icon">🔒</div>
+                </div>
+                <p className="token-lock-description">
+                  Full transparency and commitment. Our development team has
+                  locked their tokens to ensure long-term alignment with the
+                  community. Verified on-chain via Streamflow.
+                </p>
+                <div className="token-lock-grid">
+                  <a
+                    href="https://app.streamflow.finance/contract/solana/mainnet/5UEZ9gpTd3uHiQpJTkmVdhabcuxBEgJccCsnNKsTqLEL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="token-lock-card group"
+                  >
+                    <div className="lock-card-badge">Contract 1</div>
+                    <div className="lock-card-icon">🎄</div>
+                    <div className="lock-card-label">Locked via Streamflow</div>
+                    <div className="lock-card-address">5UEZ9gp...qLEL</div>
+                    <div className="lock-card-action">View Contract →</div>
+                    <div className="lock-card-glow"></div>
+                  </a>
+                  <a
+                    href="https://app.streamflow.finance/contract/solana/mainnet/9FKoVX1DEzQeUp7xNisA6kCansdpBZgG2rUuVCKrhs7N"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="token-lock-card group"
+                  >
+                    <div className="lock-card-badge">Contract 2</div>
+                    <div className="lock-card-icon">❄️</div>
+                    <div className="lock-card-label">Locked via Streamflow</div>
+                    <div className="lock-card-address">9FKoVX1...hs7N</div>
+                    <div className="lock-card-action">View Contract →</div>
+                    <div className="lock-card-glow"></div>
+                  </a>
+                  <a
+                    href="https://app.streamflow.finance/contract/solana/mainnet/96aAaFk9xtY7P5XNC1vpWwAMrrMRjRHDtbCdyG5jREjJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="token-lock-card group"
+                  >
+                    <div className="lock-card-badge">Contract 3</div>
+                    <div className="lock-card-icon">🎁</div>
+                    <div className="lock-card-label">Locked via Streamflow</div>
+                    <div className="lock-card-address">96aAaFk...jREjJ</div>
+                    <div className="lock-card-action">View Contract →</div>
+                    <div className="lock-card-glow"></div>
+                  </a>
+                </div>
+                <div className="token-lock-footer">
+                  <span className="footer-badge">✓</span>
+                  <span className="footer-text">
+                    Verified On-Chain • Solana Mainnet
+                  </span>
+                  <span className="footer-badge">✓</span>
+                </div>
               </div>
             </div>
 
