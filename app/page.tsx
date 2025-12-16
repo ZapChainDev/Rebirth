@@ -854,32 +854,7 @@ export default function Home() {
                     <div className="member-wallet">
                       <p className="wallet-label">Dev Wallet:</p>
                       <code className="wallet-address">
-                        CeVyfo1uLgt6dLDyXZuUFL7ZkgsUsWA5FENGf2mdSGRb
-                      </code>
-                      <code className="wallet-address">
                         8cxFnVqa7sUSEXxeRzqDSbXYfEZSGFeWnfAjAzkaRcQE
-                      </code>
-                    </div>
-                    <div className="member-divider">✦</div>
-                  </div>
-
-                  <div className="team-member">
-                    <div className="member-icon">📜</div>
-                    <h3 className="member-name">Syverin | Rebirth ARC</h3>
-                    <p className="member-role">Telegram Manager</p>
-                    <a
-                      href="https://x.com/Syverinjnmf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="member-social"
-                    >
-                      <span className="social-icon">𝕏</span>
-                      <span>@Syverinjnmf</span>
-                    </a>
-                    <div className="member-wallet">
-                      <p className="wallet-label">TG Manager Wallet:</p>
-                      <code className="wallet-address">
-                        CmBh5b67HQZ996J1DDmp9fm84Msdh5zEQ7z87KVYWoL6
                       </code>
                     </div>
                     <div className="member-divider">✦</div>
