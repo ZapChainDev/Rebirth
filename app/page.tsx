@@ -386,6 +386,31 @@ export default function Home() {
                 This holiday season, witness the greatest comeback story. A gift
                 of new beginnings. 🎁
               </p>
+
+              {/* Hero Social Links */}
+              <div className="flex gap-4 justify-center items-center mt-8">
+                <a
+                  href="https://x.com/RebirthNewHope"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="historic-button historic-button-dark text-sm"
+                >
+                  <span className="historic-button-ornament">✦</span>
+                  <span className="historic-button-text">FOLLOW ON X</span>
+                  <span className="historic-button-ornament">✦</span>
+                </a>
+
+                <a
+                  href="https://t.me/RebirthandNewHope"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="historic-button historic-button-blue text-sm"
+                >
+                  <span className="historic-button-ornament">✦</span>
+                  <span className="historic-button-text">JOIN TELEGRAM</span>
+                  <span className="historic-button-ornament">✦</span>
+                </a>
+              </div>
             </div>
 
             {/* Christmas Countdown Timer */}
@@ -775,6 +800,17 @@ export default function Home() {
                 <span className="historic-button-text">JOIN COMMUNITY</span>
                 <span className="historic-button-ornament">✦</span>
               </a>
+
+              <a
+                href="https://t.me/RebirthandNewHope"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="historic-button historic-button-blue"
+              >
+                <span className="historic-button-ornament">✦</span>
+                <span className="historic-button-text">JOIN TELEGRAM</span>
+                <span className="historic-button-ornament">✦</span>
+              </a>
             </div>
 
             {/* Listings Section - Where to Buy */}
@@ -851,12 +887,6 @@ export default function Home() {
                       <span className="social-icon">𝕏</span>
                       <span>@marvCalledIt</span>
                     </a>
-                    <div className="member-wallet">
-                      <p className="wallet-label">Dev Wallet:</p>
-                      <code className="wallet-address">
-                        8cxFnVqa7sUSEXxeRzqDSbXYfEZSGFeWnfAjAzkaRcQE
-                      </code>
-                    </div>
                     <div className="member-divider">✦</div>
                   </div>
 
@@ -873,12 +903,6 @@ export default function Home() {
                       <span className="social-icon">𝕏</span>
                       <span>@SweetArcaneJinx</span>
                     </a>
-                    <div className="member-wallet">
-                      <p className="wallet-label">Website Dev Wallet:</p>
-                      <code className="wallet-address">
-                        4byGAQrAJiHGjPAeu83HPG9Sg26bUx7hvg1mhxwDcByk
-                      </code>
-                    </div>
                     <div className="member-divider">✦</div>
                   </div>
 
@@ -886,12 +910,6 @@ export default function Home() {
                     <div className="member-icon">🗺️</div>
                     <h3 className="member-name">TropicViper • REBIRTH ARK</h3>
                     <p className="member-role">Road Map Captain</p>
-                    <div className="member-wallet">
-                      <p className="wallet-label">Road Map Captain Wallet:</p>
-                      <code className="wallet-address">
-                        GKQYuVicuXMVBR6omcDYF1FFGbctzLg26i1GnpSMMaDq
-                      </code>
-                    </div>
                     <div className="member-divider">✦</div>
                   </div>
 
@@ -908,12 +926,6 @@ export default function Home() {
                       <span className="social-icon">𝕏</span>
                       <span>@WaiterG</span>
                     </a>
-                    <div className="member-wallet">
-                      <p className="wallet-label">Locked Wallet:</p>
-                      <code className="wallet-address">
-                        9hpzqLMk3y4yPj3tVf9q7CCaz6QbVMUHF8LGUghE41NG
-                      </code>
-                    </div>
                     <div className="member-divider">✦</div>
                   </div>
                 </div>
