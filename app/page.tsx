@@ -319,7 +319,7 @@ export default function Home() {
               </h2>
               <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto italic">
                 Witness the greatest comeback story written in the annals of
-                time. A phoenix rising from history's ashes. 🔥
+                time. A phoenix rising from history&apos;s ashes. 🔥
               </p>
 
               {/* Hero Social Links */}
