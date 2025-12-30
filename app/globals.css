@@ -96,50 +96,45 @@ body {
   filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.6));
 }
 
-/* Christmas Text Effect */
-.christmas-text {
+/* Historic Golden Text Effect */
+.historic-text {
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
-    #ffe6e6 10%,
-    #ff4444 25%,
-    #cc0000 35%,
-    #ffffff 50%,
-    #e6ffe6 65%,
-    #44ff44 75%,
-    #00cc00 90%,
+    #ffd700 15%,
+    #b8860b 30%,
+    #8b7500 45%,
+    #ffd700 60%,
+    #daa520 75%,
+    #b8860b 90%,
     #ffffff 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 100% 400%;
-  animation: christmasGlow 4s ease-in-out infinite,
-    christmasShimmer 0.2s ease-in-out infinite;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.5),
-    0 0 60px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 0, 0, 0.3),
-    2px 2px 0 rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.3),
-    6px 6px 0 rgba(0, 0, 0, 0.2);
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
+  animation: historicGlow 4s ease-in-out infinite,
+    historicShimmer 0.2s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(184, 134, 11, 0.6),
+    0 0 40px rgba(218, 165, 32, 0.5), 0 0 60px rgba(255, 215, 0, 0.4),
+    0 0 80px rgba(184, 134, 11, 0.3), 2px 2px 0 rgba(0, 0, 0, 0.4),
+    4px 4px 0 rgba(0, 0, 0, 0.3), 6px 6px 0 rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
 }
 
-@keyframes christmasGlow {
+@keyframes historicGlow {
   0%,
   100% {
     background-position: 0% 0%;
-    filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.6)) brightness(1);
+    filter: drop-shadow(0 0 30px rgba(184, 134, 11, 0.6)) brightness(1);
   }
-  33% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)) brightness(1.1);
-  }
-  66% {
+  50% {
     background-position: 0% 100%;
-    filter: drop-shadow(0 0 50px rgba(0, 255, 0, 0.7)) brightness(1.2);
+    filter: drop-shadow(0 0 50px rgba(218, 165, 32, 0.8)) brightness(1.2);
   }
 }
 
-@keyframes christmasShimmer {
+@keyframes historicShimmer {
   0%,
   100% {
     opacity: 1;
@@ -149,22 +144,22 @@ body {
   }
 }
 
-/* Christmas Glow Effect for Divider */
-.christmas-glow {
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5),
-    0 0 60px rgba(255, 255, 255, 0.3);
-  animation: christmasPulse 3s ease-in-out infinite;
+/* Historic Glow Effect for Divider */
+.historic-glow {
+  box-shadow: 0 0 20px rgba(184, 134, 11, 0.5), 0 0 40px rgba(218, 165, 32, 0.5),
+    0 0 60px rgba(255, 215, 0, 0.3);
+  animation: historicPulse 3s ease-in-out infinite;
 }
 
-@keyframes christmasPulse {
+@keyframes historicPulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5),
-      0 0 60px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(184, 134, 11, 0.5),
+      0 0 40px rgba(218, 165, 32, 0.5), 0 0 60px rgba(255, 215, 0, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7), 0 0 60px rgba(0, 255, 0, 0.7),
-      0 0 90px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(184, 134, 11, 0.7),
+      0 0 60px rgba(218, 165, 32, 0.7), 0 0 90px rgba(255, 215, 0, 0.5);
   }
 }
 
@@ -1114,52 +1109,52 @@ html {
   border-color: #a58759;
 }
 
-/* Christmas Scroll Cards */
-.christmas-scroll {
+/* Historic Scroll Cards */
+.historic-scroll-gold {
   background: linear-gradient(
     135deg,
     #1a1a1a 0%,
-    #2d0000 25%,
+    #2d2200 25%,
     #1a1a1a 50%,
-    #002d00 75%,
+    #332600 75%,
     #1a1a1a 100%
   );
   border: 3px solid #ffaa00;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 0, 0, 0.3),
-    0 0 40px rgba(0, 255, 0, 0.2);
-  animation: christmasCardGlow 3s ease-in-out infinite;
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(184, 134, 11, 0.3),
+    0 0 40px rgba(218, 165, 32, 0.2);
+  animation: historicCardGlow 3s ease-in-out infinite;
 }
 
-.christmas-scroll:hover {
+.historic-scroll-gold:hover {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 0, 0, 0.5),
-    0 0 50px rgba(0, 255, 0, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 40px rgba(184, 134, 11, 0.5),
+    0 0 50px rgba(218, 165, 32, 0.4);
   border-color: #ffd700;
 }
 
-@keyframes christmasCardGlow {
+@keyframes historicCardGlow {
   0%,
   100% {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 0, 0, 0.3),
-      0 0 40px rgba(0, 255, 0, 0.2);
+      inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(184, 134, 11, 0.3),
+      0 0 40px rgba(218, 165, 32, 0.2);
   }
   50% {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(0, 255, 0, 0.4),
-      0 0 50px rgba(255, 0, 0, 0.3);
+      inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 40px rgba(218, 165, 32, 0.4),
+      0 0 50px rgba(184, 134, 11, 0.3);
   }
 }
 
-/* Modern Christmas Cards - Redesigned */
-.modern-christmas-card {
+/* Modern Historic Cards - Redesigned */
+.modern-historic-card {
   position: relative;
   background: linear-gradient(
     145deg,
-    rgba(20, 10, 10, 0.95) 0%,
-    rgba(10, 25, 15, 0.95) 50%,
-    rgba(20, 10, 10, 0.95) 100%
+    rgba(20, 15, 10, 0.95) 0%,
+    rgba(25, 20, 15, 0.95) 50%,
+    rgba(20, 15, 10, 0.95) 100%
   );
   border: 2px solid #d4af37;
   border-radius: 16px;
@@ -1172,7 +1167,7 @@ html {
   backdrop-filter: blur(10px);
 }
 
-.modern-christmas-card::before {
+.modern-historic-card::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -1188,12 +1183,12 @@ html {
   pointer-events: none;
 }
 
-.modern-christmas-card:hover {
+.modern-historic-card:hover {
   transform: translateY(-12px) scale(1.03);
   border-color: #ffd700;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
     inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 215, 0, 0.4),
-    0 0 60px rgba(255, 0, 0, 0.2), 0 0 80px rgba(0, 255, 0, 0.2);
+    0 0 60px rgba(184, 134, 11, 0.3);
 }
 
 @keyframes cardPulse {
@@ -1274,7 +1269,7 @@ html {
   }
 }
 
-.modern-christmas-card:hover .floating-ornament {
+.modern-historic-card:hover .floating-ornament {
   animation-duration: 3s;
   opacity: 0.6;
 }
@@ -1298,7 +1293,7 @@ html {
   transition: all 0.4s ease;
 }
 
-.modern-christmas-card:hover .card-icon-wrapper {
+.modern-historic-card:hover .card-icon-wrapper {
   transform: scale(1.15) rotate(10deg);
   border-color: rgba(255, 215, 0, 0.6);
   background: linear-gradient(
@@ -1315,7 +1310,7 @@ html {
   transition: transform 0.4s ease;
 }
 
-.modern-christmas-card:hover .card-icon {
+.modern-historic-card:hover .card-icon {
   transform: scale(1.1);
 }
 
@@ -1331,7 +1326,7 @@ html {
   transition: all 0.4s ease;
 }
 
-.modern-christmas-card:hover .card-title {
+.modern-historic-card:hover .card-title {
   color: #ffd700;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.6);
   letter-spacing: 0.3em;
@@ -1346,7 +1341,7 @@ html {
   transition: all 0.4s ease;
 }
 
-.modern-christmas-card:hover .card-divider {
+.modern-historic-card:hover .card-divider {
   width: 100px;
   background: linear-gradient(90deg, transparent, #ffd700, transparent);
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
@@ -1363,7 +1358,7 @@ html {
   transition: color 0.4s ease;
 }
 
-.modern-christmas-card:hover .card-description {
+.modern-historic-card:hover .card-description {
   color: #d4d4d4;
 }
 
@@ -1385,88 +1380,59 @@ html {
   transition: opacity 0.4s ease;
 }
 
-.modern-christmas-card:hover .card-glow {
+.modern-historic-card:hover .card-glow {
   opacity: 1;
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
 }
 
-/* Christmas Countdown Timer */
-.christmas-countdown-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+/* Roadmap Timeline Styles */
+.roadmap-timeline {
+  position: relative;
   background: linear-gradient(
     145deg,
-    rgba(15, 5, 5, 0.95) 0%,
-    rgba(5, 20, 10, 0.95) 50%,
-    rgba(15, 5, 5, 0.95) 100%
+    rgba(15, 10, 5, 0.95) 0%,
+    rgba(20, 15, 10, 0.95) 50%,
+    rgba(15, 10, 5, 0.95) 100%
   );
   border: 2px solid #d4af37;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 30px rgba(212, 175, 55, 0.3),
-    0 0 40px rgba(255, 0, 0, 0.2), 0 0 50px rgba(0, 255, 0, 0.2);
-  backdrop-filter: blur(10px);
-  position: relative;
+  padding: 3rem 2rem;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
-.christmas-countdown-container::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(212, 175, 55, 0.1) 0%,
-    transparent 70%
-  );
-  animation: countdownPulse 6s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes countdownPulse {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.2) rotate(180deg);
-  }
-}
-
-.countdown-header {
+.timeline-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.countdown-star {
+.timeline-ornament {
   font-size: 2rem;
-  animation: starTwinkle 2s ease-in-out infinite;
+  color: #d4af37;
+  animation: ornamentPulse 3s ease-in-out infinite;
 }
 
-@keyframes starTwinkle {
+@keyframes ornamentPulse {
   0%,
   100% {
-    opacity: 0.5;
+    opacity: 0.6;
     transform: scale(1);
   }
   50% {
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
-.countdown-title {
+.timeline-title {
   font-family: "Cinzel", serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: #d4af37;
@@ -1474,51 +1440,61 @@ html {
   text-transform: uppercase;
 }
 
-.countdown-grid {
+.roadmap-phase {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+.roadmap-phase:last-of-type {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.phase-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.phase-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.2),
+    rgba(255, 215, 0, 0.1)
+  );
+  border: 3px solid rgba(212, 175, 55, 0.5);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 0 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.4s ease;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.countdown-box {
-  position: relative;
+.roadmap-phase-active .phase-icon {
+  border-color: #ffd700;
   background: linear-gradient(
     135deg,
-    rgba(30, 15, 15, 0.9) 0%,
-    rgba(15, 30, 20, 0.9) 100%
+    rgba(255, 215, 0, 0.3),
+    rgba(212, 175, 55, 0.2)
   );
-  border: 2px solid rgba(212, 175, 55, 0.4);
-  border-radius: 12px;
-  padding: 1.5rem 1rem;
-  min-width: 120px;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 215, 0, 0.5);
+  animation: phaseIconPulse 2s ease-in-out infinite;
 }
 
-.countdown-box:hover {
-  transform: translateY(-5px) scale(1.05);
-  border-color: rgba(255, 215, 0, 0.6);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
-.countdown-number {
-  font-family: "Cinzel", serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #ffd700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.5);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  animation: numberPulse 1s ease-in-out infinite;
-}
-
-@keyframes numberPulse {
+@keyframes phaseIconPulse {
   0%,
   100% {
     transform: scale(1);
@@ -1528,74 +1504,205 @@ html {
   }
 }
 
-.countdown-label {
-  font-family: "Cinzel", serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: #a8a8a8;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+.phase-line {
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0.5),
+    rgba(212, 175, 55, 0.2),
+    transparent
+  );
+  margin-top: 1rem;
+  flex-grow: 1;
 }
 
-.countdown-ornament {
+.roadmap-phase:last-of-type .phase-line {
+  display: none;
+}
+
+.phase-content {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 20, 15, 0.6) 0%,
+    rgba(25, 18, 12, 0.6) 100%
+  );
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.roadmap-phase-active .phase-content {
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.phase-content:hover {
+  transform: translateX(8px);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.phase-title {
+  font-family: "Cinzel", serif;
   font-size: 1.5rem;
-  opacity: 0.6;
-  animation: ornamentFloat 3s ease-in-out infinite;
-}
-
-@keyframes ornamentFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translateY(-5px);
-    opacity: 0.8;
-  }
-}
-
-.countdown-separator {
-  font-family: "Cinzel", serif;
-  font-size: 2.5rem;
   font-weight: 700;
+  letter-spacing: 0.15em;
   color: #d4af37;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-  opacity: 0.7;
-  animation: separatorBlink 2s ease-in-out infinite;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
 }
 
-@keyframes separatorBlink {
-  0%,
-  49%,
-  51%,
-  100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
-
-.countdown-message {
-  margin-top: 2rem;
+.phase-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 255, 0, 0.2);
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  border-radius: 20px;
   font-family: "Cinzel", serif;
-  font-size: 1.125rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #00ff00;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.phase-status-upcoming {
+  background: rgba(255, 165, 0, 0.2);
+  border-color: rgba(255, 165, 0, 0.4);
+  color: #ffa500;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+}
+
+.phase-status-future {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.4);
+  color: #ba55d3;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.phase-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #a8a8a8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.phase-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  space-y: 0.75rem;
+}
+
+.phase-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d4d4d4;
+  transition: all 0.3s ease;
+}
+
+.phase-item:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.phase-bullet {
+  color: #d4af37;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.phase-item strong {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.timeline-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.timeline-end-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.end-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.2),
+    rgba(255, 215, 0, 0.1)
+  );
+  border: 2px solid rgba(212, 175, 55, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #d4af37;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.timeline-end-text {
+  font-family: "Cinzel", serif;
+  font-size: 1.25rem;
   font-style: italic;
   color: #b8b8b8;
   text-align: center;
   letter-spacing: 0.1em;
-  animation: messageFade 3s ease-in-out infinite;
 }
 
-@keyframes messageFade {
-  0%,
-  100% {
-    opacity: 0.6;
+/* Responsive Roadmap */
+@media (max-width: 768px) {
+  .roadmap-phase {
+    gap: 1rem;
   }
-  50% {
-    opacity: 1;
+
+  .phase-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .phase-title {
+    font-size: 1.125rem;
+  }
+
+  .timeline-title {
+    font-size: 1.75rem;
+  }
+
+  .phase-content {
+    padding: 1.5rem;
   }
 }
 
@@ -4181,44 +4288,4 @@ html {
 
 .hamburger-open .hamburger-line:last-child {
   transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Christmas Snowfall Effect */
-.snowfall {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 30;
-  overflow: hidden;
-}
-
-.snowflake {
-  position: absolute;
-  top: -20px;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-    0 0 10px rgba(200, 230, 255, 0.6);
-  animation: snowfall linear infinite;
-  user-select: none;
-}
-
-@keyframes snowfall {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(25vh) translateX(10px) rotate(90deg);
-  }
-  50% {
-    transform: translateY(50vh) translateX(-10px) rotate(180deg);
-  }
-  75% {
-    transform: translateY(75vh) translateX(15px) rotate(270deg);
-  }
-  100% {
-    transform: translateY(100vh) translateX(0) rotate(360deg);
-  }
 }
