@@ -161,8 +161,8 @@ export default function Roadmap() {
                 🗺️ Our Sacred Journey Forward 🗺️
               </h2>
               <p className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto italic">
-                A chronicle of our mission to bring new hope and rebuild trust in
-                the meme coin realm. Together, we write history.
+                A chronicle of our mission to bring new hope and rebuild trust
+                in the meme coin realm. Together, we write history.
               </p>
             </div>
 
@@ -195,9 +195,8 @@ export default function Roadmap() {
                     <p className="book-text mt-6">
                       We strive to make the connection among holders more real
                       and tangible. Family, friends, coworkers—all are welcomed
-                      to join{" "}
-                      <span className="book-highlight">the Ark</span>, where
-                      bonds transcend mere digital transactions.
+                      to join <span className="book-highlight">the Ark</span>,
+                      where bonds transcend mere digital transactions.
                     </p>
                   </div>
 
@@ -208,7 +207,10 @@ export default function Roadmap() {
                       Our vision is to bring back the OG vibes of 2022—a time of
                       genuine community spirit that has been sorely missing in
                       meme coins. Rebirth&apos;s goal is to show holders{" "}
-                      <span className="book-highlight">you are safe with us</span>.
+                      <span className="book-highlight">
+                        you are safe with us
+                      </span>
+                      .
                     </p>
 
                     <p className="book-text mt-6">
@@ -276,8 +278,8 @@ export default function Roadmap() {
                       <li className="phase-item">
                         <span className="phase-bullet">⚔</span>
                         <span>
-                          Foster connections that transcend the digital:
-                          family, friends, coworkers united in purpose
+                          Foster connections that transcend the digital: family,
+                          friends, coworkers united in purpose
                         </span>
                       </li>
                       <li className="phase-item">
