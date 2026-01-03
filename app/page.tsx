@@ -763,7 +763,9 @@ export default function Home() {
                   <div className="team-member">
                     <div className="member-icon">⚔</div>
                     <h3 className="member-name">MARV • REBIRTH ARK</h3>
-                    <p className="member-role">Lead Developer</p>
+                    <p className="member-role">
+                      Lead Developer & Road Map Captain
+                    </p>
                     <a
                       href="https://x.com/marvCalledIt"
                       target="_blank"
@@ -789,13 +791,6 @@ export default function Home() {
                       <span className="social-icon">𝕏</span>
                       <span>@SweetArcaneJinx</span>
                     </a>
-                    <div className="member-divider">✦</div>
-                  </div>
-
-                  <div className="team-member">
-                    <div className="member-icon">🗺️</div>
-                    <h3 className="member-name">TropicViper • REBIRTH ARK</h3>
-                    <p className="member-role">Road Map Captain</p>
                     <div className="member-divider">✦</div>
                   </div>
 
