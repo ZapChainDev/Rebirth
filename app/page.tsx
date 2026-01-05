@@ -139,12 +139,6 @@ export default function Home() {
               >
                 🗺️ Roadmap
               </Link>
-              <Link
-                href="/memes"
-                className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
-              >
-                😂 Memes
-              </Link>
               <a
                 href="#about"
                 className="historic-nav-link text-gray-300 hover:text-white transition-colors duration-300 font-semibold tracking-wider uppercase text-sm"
@@ -259,12 +253,6 @@ export default function Home() {
                 className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
               >
                 🗺️ Roadmap
-              </Link>
-              <Link
-                href="/memes"
-                className="historic-nav-link text-gray-300 hover:text-white py-2 px-3 rounded hover:bg-white/10 transition-colors font-semibold tracking-wider uppercase text-sm"
-              >
-                😂 Memes
               </Link>
               <a
                 href="#about"
@@ -427,25 +415,12 @@ export default function Home() {
                 </p>
                 <div className="token-lock-grid">
                   <a
-                    href="https://app.streamflow.finance/contract/solana/mainnet/5UEZ9gpTd3uHiQpJTkmVdhabcuxBEgJccCsnNKsTqLEL"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="token-lock-card group"
-                  >
-                    <div className="lock-card-badge">Contract 1</div>
-                    <div className="lock-card-icon">🔒</div>
-                    <div className="lock-card-label">Locked via Streamflow</div>
-                    <div className="lock-card-address">5UEZ9gp...qLEL</div>
-                    <div className="lock-card-action">View Contract →</div>
-                    <div className="lock-card-glow"></div>
-                  </a>
-                  <a
                     href="https://app.streamflow.finance/contract/solana/mainnet/9FKoVX1DEzQeUp7xNisA6kCansdpBZgG2rUuVCKrhs7N"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="token-lock-card group"
                   >
-                    <div className="lock-card-badge">Contract 2</div>
+                    <div className="lock-card-badge">Contract 1</div>
                     <div className="lock-card-icon">🔐</div>
                     <div className="lock-card-label">Locked via Streamflow</div>
                     <div className="lock-card-address">9FKoVX1...hs7N</div>
@@ -458,7 +433,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="token-lock-card group"
                   >
-                    <div className="lock-card-badge">Contract 3</div>
+                    <div className="lock-card-badge">Contract 2</div>
                     <div className="lock-card-icon">🛡️</div>
                     <div className="lock-card-label">Locked via Streamflow</div>
                     <div className="lock-card-address">96aAaFk...jREjJ</div>
@@ -795,18 +770,15 @@ export default function Home() {
                   </div>
 
                   <div className="team-member team-member-locked">
-                    <div className="member-icon">🔒</div>
-                    <h3 className="member-name">WaiterG Locked Wallet</h3>
-                    <p className="member-role">50M Tokens Locked</p>
-                    <a
-                      href="https://x.com/WaiterG"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="member-social"
-                    >
-                      <span className="social-icon">𝕏</span>
-                      <span>@WaiterG</span>
-                    </a>
+                    <div className="member-icon">🏦</div>
+                    <h3 className="member-name">The Ark Reserve Wallet</h3>
+                    <p className="member-role">Community Treasury</p>
+                    <div className="member-wallet">
+                      <div className="wallet-label">Wallet Address</div>
+                      <div className="wallet-address">
+                        2x6oQemBk138yWnnuM14QrWYzd4ruVh1nhV6c1osDWPK
+                      </div>
+                    </div>
                     <div className="member-divider">✦</div>
                   </div>
                 </div>
