@@ -440,6 +440,32 @@ export default function Home() {
                     <div className="lock-card-action">View Contract →</div>
                     <div className="lock-card-glow"></div>
                   </a>
+                  <a
+                    href="https://app.streamflow.finance/contract/solana/mainnet/7AcXYWpCP2EiAUCCGvx3qHK5EC8PVcHke2oj9geMuBhy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="token-lock-card group"
+                  >
+                    <div className="lock-card-badge">Contract 3</div>
+                    <div className="lock-card-icon">🔒</div>
+                    <div className="lock-card-label">Locked via Streamflow</div>
+                    <div className="lock-card-address">7AcXYWp...MuBhy</div>
+                    <div className="lock-card-action">View Contract →</div>
+                    <div className="lock-card-glow"></div>
+                  </a>
+                  <a
+                    href="https://app.streamflow.finance/contract/solana/mainnet/DA4D3mY2dde2dMcdyc3zsDdWt482X2BdEkd8b9nWw85V"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="token-lock-card group"
+                  >
+                    <div className="lock-card-badge">Contract 4</div>
+                    <div className="lock-card-icon">⚔️</div>
+                    <div className="lock-card-label">Locked via Streamflow</div>
+                    <div className="lock-card-address">DA4D3mY...Ww85V</div>
+                    <div className="lock-card-action">View Contract →</div>
+                    <div className="lock-card-glow"></div>
+                  </a>
                 </div>
                 <div className="token-lock-footer">
                   <span className="footer-badge">✓</span>
