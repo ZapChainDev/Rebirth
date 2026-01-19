@@ -413,6 +413,28 @@ export default function Home() {
                   locked their tokens to ensure long-term alignment with the
                   community. Verified on-chain via Streamflow.
                 </p>
+
+                {/* Overall Locked Tokens Summary */}
+                <div className="mb-8 p-6 bg-gradient-to-r from-amber-900/20 via-gray-900/50 to-amber-900/20 border border-amber-700/30 rounded-lg">
+                  <div className="text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-amber-500 to-amber-300 text-transparent bg-clip-text">
+                      Overall Locked Tokens: 10%
+                    </h3>
+                    <a
+                      href="https://x.com/RebirthNewHope/status/2012213896577212487"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300 mt-2"
+                    >
+                      <span className="nav-x-link text-base">𝕏</span>
+                      <span className="text-sm uppercase tracking-wider">
+                        View Announcement
+                      </span>
+                      <span>→</span>
+                    </a>
+                  </div>
+                </div>
+
                 <div className="token-lock-grid">
                   <a
                     href="https://app.streamflow.finance/contract/solana/mainnet/9FKoVX1DEzQeUp7xNisA6kCansdpBZgG2rUuVCKrhs7N"
