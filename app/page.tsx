@@ -824,7 +824,7 @@ export default function Home() {
                     <div className="member-wallet">
                       <div className="wallet-label">Wallet Address</div>
                       <div className="wallet-address">
-                        2x6oQemBk138yWnnuM14QrWYzd4ruVh1nhV6c1osDWPK
+                        4NQtsJaF1cMU4ahbfEsM8pddFNm3fkLCmCabdSAyJzoo
                       </div>
                     </div>
                     <div className="member-divider">✦</div>
