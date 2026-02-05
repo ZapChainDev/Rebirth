@@ -324,21 +324,18 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Banner with Dark Design - Video */}
+            {/* Hero Banner with Dark Design */}
             <div className="w-full flex justify-center scroll-animate opacity-0">
               <div className="relative group max-w-5xl w-full">
                 <div className="absolute -inset-1 bg-gradient-to-r from-white via-gray-300 to-white rounded-2xl blur-xl opacity-10 group-hover:opacity-20 transition duration-700"></div>
                 <div className="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <Image
+                    src="/New banner.jpg"
+                    alt="Rebirth Banner"
+                    width={1200}
+                    height={675}
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  >
-                    <source src="/BACKGROUNDVIDEO.MP4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  />
                 </div>
               </div>
             </div>
